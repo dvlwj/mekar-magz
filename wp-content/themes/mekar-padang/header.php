@@ -15,20 +15,8 @@
   <div class="container-fluid">
     <div class="row text-center header-logo">
       <a class="navbar-brand" href="<?php echo get_home_url() ?>">
-        <img class="image-full" src="<?php echo theme_image('mekar.png')?>" loading="lazy"/>
+        <img class="image-full" src="<?php echo theme_image('mekar.jpeg')?>" loading="lazy"/>
       </a>
     </div>
   </div>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mekarNavbar" aria-controls="mekarNavbar" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse justify-content-center" id="mekarNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item"> <a class="nav-link" href="#">Tentang</a></li>
-        <li class="nav-item"> <a class="nav-link" href="#">Editor</a></li>
-        <li class="nav-item"> <a class="nav-link" href="#">Kontak</a></li>
-      </ul>
-    </div>
-  </nav>
 </div>

@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
   <div class="row" >
-    <div class="col-xs-12 col-sm-3" style="padding:0">
+    <!-- <div class="col-xs-12 col-sm-3" style="padding:0">
       <div class="card">
         <div class="card-header">
           Kategori
@@ -37,8 +37,27 @@
           </li>
         </ul>
       </div>
+    </div> -->
+    <div class="col-xs-12 col-xs-12 col-sm-3" style="padding:0">
+      <div class="card editor-desk">
+        <div class="card-header">
+          DARI MEJA REDAKSI
+        </div>
+        <div class="card-body">
+          <img class="image-full image-center" src="https://via.placeholder.com/150x150.png?text=Gambar+meja+redaksi" alt="Cerita Moral">
+          <p class="card-text">Teman-teman terkasih. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+        </div>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-6" style="padding-top: 1em;">
+    <div class="col-xs-12 col-sm-6">
+      <div class="card editor-desk">
+        <div class="card-header">
+          PESAN KITAB SUCI
+        </div>
+        <div class="card-body">
+          <p class="card-text">Teman-teman terkasih,<br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+        </div>
+      </div>
       <div class="row" style="margin-bottom: 5em;">
         <div class="col">
           <h5 class="text-center w-100">Tema</h5>
@@ -98,11 +117,10 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-3" style="padding:1em 0 0 1em">
-      <div class="row" style="margin-bottom:1em">
-        <img src="https://via.placeholder.com/25x25" alt="Gambar Santa">
-        <h5>&nbsp; Ujud Doa bapa Suci Juni 2020</h5>
-      </div>
+    <div class="col-xs-12 col-sm-3">
+        <button class="btn btn-primary btn-menu">MENU</button>
+        <div class="row" style="margin-bottom:1em">
+        </div>
       <div class="row">
         <img class="d-block w-100" src="https://via.placeholder.com/250x250.png?text=Gambar+Doa+bapa+Suci" alt="Cerita Moral">
       </div>

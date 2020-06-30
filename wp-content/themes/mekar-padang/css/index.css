@@ -7,6 +7,10 @@
   --color-crimson-in-rgba: rgba(230, 34, 40,0.8);
   --color-light-coral: #ec7074;
   --color-blue: #027cc4;
+  --color-blue-header: rgba(2,124,196,0.5);
+  --color-mekar-purple: #9a3cff;
+  --color-mekar-magenta: #eb39ff;
+  --color-mekar-yellow: #fdffa3;
 }
 
 .fab {
@@ -30,6 +34,12 @@
   max-height: 100%;
 }
 
+.image-center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 /* .hidden {
   display: none;
 } */
@@ -41,7 +51,6 @@ html {
 }
 
 /* Navigation Style */
-
 .fixed-nav {
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
@@ -69,7 +78,7 @@ html {
 }
 .fixed-nav .header-logo .navbar-brand img {
   width: 100%;
-  max-width: 12em;
+  max-width: 50%;
 }
 /* Footer Style */
 
@@ -88,12 +97,27 @@ footer img {
 
 /* Homepage Style */
 
-.card {
-  height:100%;
+/*.editor-desk {*/
+/*  margin-top: 2rem;*/
+/*}*/
+
+.editor-desk .card-header {
+  text-align: center;
+  font-weight: bold;
+  background-color: var(--color-mekar-magenta);
 }
 
-.card, .list-group {
+.editor-desk .card-body {
+  background-color: var(--color-mekar-yellow);
+}
+
+.btn-menu {
+  width: 100%;
+  background-color: var(--color-mekar-purple);
+  padding: 0.75em;
+  margin-bottom: 2em;
   border-radius: 0;
+  border: none;
 }
 
 .carousel-indicators {

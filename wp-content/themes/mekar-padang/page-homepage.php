@@ -1,117 +1,244 @@
 <?php /* Template Name: Page - Homepage */ ?>
 
+<?php get_header(); ?>
 <?php
- $headBanner = get_field('head-banner');
- $headBanner_content_group = get_field('head-banner_content_group');
- $highlight_banner = get_field('highlight_banner');
- $quote_banner = get_field('quote_banner');
- $feature_banner = get_field('feature_banner');
- $function_list = get_field('function_list');
+$editor_desk = get_field('editor_desk');
+$bible_message = get_field('bible_message');
+$gambar_ujud_doa = get_field('gambar_ujud_doa');
 ?>
 
-<?php get_header(); ?>
-
-<div class="container-fluid">
-  <?php if( get_field('head-banner') ) : ?>
-    <?php if ( have_rows('head-banner_content_group') ): ?>
-      <?php while( have_rows('head-banner_content_group') ): the_row() ?>
-        <div class="row head-banner_content_group">
-          <?php if ( have_rows('left_head_banner') ) : ?>
-            <?php while( have_rows('left_head_banner') ): the_row();
-              $left_head_banner_background = get_sub_field('left_head_banner_background');
-              $left_head_banner_text = get_sub_field('left_head_banner_text');
-              $left_head_banner_image = get_sub_field('left_head_banner_image');
-              $left_head_banner_background_color = get_sub_field('left_head_banner_background_color');
-              $left_head_banner_background_image = get_sub_field('left_head_banner_background_image');
-            ?>
-              <?php if ($left_head_banner_background === 'Color') : ?>
-                <div class="col-xs-12 col-sm-6 col-md-6 left_head_banner d-flex align-items-center justify-content-center" style="background-color: <?php echo '#'.$left_head_banner_background_color ?> ;">
-                  <?php if ($left_head_banner_image !== '(unknown)' && strlen($left_head_banner_image) > 0 ) : ?>
-                    <img class="image-full lazy" src="<?php echo $left_head_banner_image ?>"/>
-                  <?php endif ?>
-                  <span> <?php echo $left_head_banner_text ?> </span>
+    <div class="container-fluid">
+        <div class="row" >
+            <!-- <div class="col-xs-12 col-sm-3" style="padding:0">
+              <div class="card">
+                <div class="card-header">
+                  Kategori
                 </div>
-              <?php endif ?>
-              <?php if ($left_head_banner_background === 'Image') : ?>
-                <div class="col-xs-12 col-sm-6 col-md-6 left_head_banner d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $left_head_banner_background_image ?>') ;">
-                  <?php if ($left_head_banner_image !== '(unknown)' && strlen($left_head_banner_image) > 0 ) : ?>
-                    <img class="image-full lazy" src="<?php echo $left_head_banner_image ?>"/>
-                  <?php endif ?>
-                  <span> <?php echo $left_head_banner_text ?> </span>
+                <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Orang Kudus
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Katekese
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Moral
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Fabel
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    CHC
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Varia
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Pengetahuan Populer
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Sahabat Mekar
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Cergam
+                  </li>
+                </ul>
+              </div>
+            </div> -->
+            <div class="col-xs-12 col-xs-12 col-sm-3" style="padding:0">
+                <div class="card editor-desk">
+                    <div class="card-header">
+                        DARI MEJA REDAKSI
+                    </div>
+                    <div class="card-body">
+                        <?php if ( $editor_desk ): the_row() ?>
+                            <?php
+                                $editor_desk_image = $editor_desk["image"];
+                                $editor_desk_text = $editor_desk["text"];
+                            ?>
+                            <?php if( $editor_desk_image ): ?>
+                                <img class="image-full image-center" src="<?php echo $editor_desk_image ?>" alt="Gambar Dari Meja Redaksi">
+                            <?php endif ?>
+                            <p class="card-text">
+                                <?php echo $editor_desk_text ?>
+                            </p>
+                        <?php endif ?>
+                    </div>
                 </div>
-              <?php endif ?>
-            <?php endwhile ?>
-          <?php endif; ?>
-          <?php if ( have_rows('right_head_banner') ) : ?>
-            <?php while( have_rows('right_head_banner') ): the_row();
-              $right_head_banner_background = get_sub_field('right_head_banner_background');
-              $right_head_banner_text = get_sub_field('right_head_banner_text');
-              $right_head_banner_image = get_sub_field('right_head_banner_image');
-              $right_head_banner_background_color = get_sub_field('right_head_banner_background_color');
-              $right_head_banner_background_image = get_sub_field('right_head_banner_background_image');
-            ?>
-              <?php if ($right_head_banner_background === 'Color') : ?>
-                <div class="col-xs-12 col-sm-6 col-md-6 right_head_banner d-flex align-items-center justify-content-center" style="background-color: <?php echo '#'.$right_head_banner_background_color ?> ;">
-                  <?php if ($right_head_banner_image !== '(unknown)' && strlen($right_head_banner_image) > 0 ) : ?>
-                    <img class="image-full lazy" src="<?php echo $right_head_banner_image ?>"/>
-                  <?php endif ?>
-                  <span> <?php echo $right_head_banner_text ?> </span>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="card editor-desk">
+                    <div class="card-header">
+                        PESAN KITAB SUCI
+                    </div>
+                    <div class="card-body">
+                        <?php if ( $bible_message ): the_row() ?>
+                            <?php
+                            $bible_message_image = $bible_message["image"];
+                            $bible_message_text = $bible_message["text"];
+                            ?>
+                            <?php if( $bible_message_image ): ?>
+                                <img class="image-full image-center" src="<?php echo $bible_message_image ?>" alt="Gambar Dari Meja Redaksi">
+                            <?php endif ?>
+                            <p class="card-text">
+                                <?php echo $bible_message_text ?>
+                            </p>
+                        <?php endif ?>
+                    </div>
                 </div>
-              <?php endif ?>
-              <?php if ($right_head_banner_background === 'Image') : ?>
-                <div class="col-xs-12 col-sm-6 col-md-6 right_head_banner d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $right_head_banner_background_image ?>') ;">
-                  <?php if ($right_head_banner_image !== '(unknown)' && strlen($right_head_banner_image) > 0 ) : ?>
-                    <img class="image-full lazy" src="<?php echo $right_head_banner_image ?>"/>
-                  <?php endif ?>
-                  <span> <?php echo $right_head_banner_text ?> </span>
+                <div class="row" style="margin-bottom: 5em;">
+                    <div class="col">
+                        <h5 class="text-center w-100">Tema</h5>
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Pertama" alt="Cerita Pertama">
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Kedua" alt="Cerita kedua">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Ketiga" alt="Cerita Ketiga">
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Keempat" alt="Cerita Keempat">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
-              <?php endif ?>
-            <?php endwhile ?>
-          <?php endif ?>
+                <div class="row" style="margin-bottom: 5em;">
+                    <div class="col">
+                        <h5 class="text-center w-100">Moral</h5>
+                        <img class="d-block w-100" src="https://via.placeholder.com/300x300.png?text=Cerita+Moral" alt="Cerita Moral">
+                        <p class="text-center w-100">Cerita Moral</p>
+                    </div>
+                    <div class="col">
+                        <h5 class="text-center w-100">Varia</h5>
+                        <img class="d-block w-100" src="https://via.placeholder.com/300x300.png?text=Cerita+Varia" alt="Cerita Varia">
+                        <p class="text-center w-100">Cerita Varia</p>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 5em;">
+                    <h4 class="w-100 text-center">Cergam</h4>
+                    <div class="col">
+                        <h5 class="text-center w-100">Sr. Beata</h5>
+                        <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Sr.Beata" alt="Cerita Moral">
+                        <p class="text-center w-100">Cerita Sr.Beata</p>
+                    </div>
+                    <div class="col">
+                        <h5 class="text-center w-100">Friska</h5>
+                        <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Varia">
+                        <p class="text-center w-100">Cerita Friska</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <button class="btn btn-primary btn-menu">MENU</button>
+                <div class="row" style="margin-bottom:1em">
+                </div>
+                <div class="row">
+                    <img class="d-block w-100" src="<?php echo $gambar_ujud_doa ?>" alt="Gambar Ujud Doa">
+                </div>
+                <div class="row">
+                    <h5 class="text-center w-100" style="margin-top: 1em;">Friska</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-5">
+                                    <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Moral">
+                                </div>
+                                <div class="col-xs-12 col-sm-7">
+                                    Friska 1
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-5">
+                                    <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Moral">
+                                </div>
+                                <div class="col-xs-12 col-sm-7">
+                                    Friska 2
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-5">
+                                    <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Moral">
+                                </div>
+                                <div class="col-xs-12 col-sm-7">
+                                    Friska 3
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-5">
+                                    <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Moral">
+                                </div>
+                                <div class="col-xs-12 col-sm-7">
+                                    Friska 4
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-5">
+                                    <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Moral">
+                                </div>
+                                <div class="col-xs-12 col-sm-7">
+                                    Friska 5
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-5">
+                                    <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Moral">
+                                </div>
+                                <div class="col-xs-12 col-sm-7">
+                                    Friska 6
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-5">
+                                    <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Moral">
+                                </div>
+                                <div class="col-xs-12 col-sm-7">
+                                    Friska 7
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-5">
+                                    <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Moral">
+                                </div>
+                                <div class="col-xs-12 col-sm-7">
+                                    Friska 8
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      <?php endwhile ?>
-    <?php endif ?>
-  <?php endif ?>
-  <?php if (get_field('highlight_banner') ) : ?>
-    <?php while( have_rows('highlight_banner') ): the_row() ?>
-      <div class="row hight_light_banner_group d-flex align-items-center justify-content-center text-center">
-        <?php
-          $hight_light_banner_image = get_sub_field('hight_light_banner_image');
-          $hight_light_banner_text = get_sub_field('hight_light_banner_text');
-        ?>
-        <?php if ($hight_light_banner_image !== '(unknown)' && strlen($hight_light_banner_image) > 0 ) : ?>
-          <img class="image-full lazy" src="<?php echo $hight_light_banner_image ?>"/>
-        <?php endif ?>
-        <span>
-          <?php echo $hight_light_banner_text ?>
-        </span>
-      </div>
-    <?php endwhile ?>
-  <?php endif ?>
-  <?php if (get_field('quote_banner') ) : ?>
-    <?php while( have_rows('quote_banner') ): the_row() ?>
-    <?php
-      $quote_banner_background_image = get_sub_field('quote_banner_background_image');
-      $quote_banner_text = get_sub_field('quote_banner_text');
-    ?>
-      <div
-        class="row quote_banner_group d-flex align-items-center justify-content-end text-center"
-        <?php if ($quote_banner_background_image !== '(unknown)' && strlen($quote_banner_background_image) > 0 ) { echo('style="background-image: url('.$quote_banner_background_image.')"'); } ?>
-      >
-        <span><?php echo $quote_banner_text ?></span>
-      </div>
-    <?php endwhile ?>
-  <?php endif ?>
-</div>
-
-<!-- <pre style="background-color:yellow">
-<code>
-  <?php
-    // echo var_dump($feature_banner);
-    // echo '<hr/>';
-    // echo var_dump($function_list);
-  ?>
-</code>
-</pre> -->
+    </div>
 
 <?php get_footer(); ?>
