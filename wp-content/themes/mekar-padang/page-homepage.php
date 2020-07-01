@@ -5,46 +5,13 @@
 $editor_desk = get_field('editor_desk');
 $bible_message = get_field('bible_message');
 $gambar_ujud_doa = get_field('gambar_ujud_doa');
+$short_story = get_field('short_story');
+$image_story_block = get_field('image_story_block');
+$image_story_block_large = get_field('image_story_block_large');
 ?>
 
     <div class="container-fluid">
-        <div class="row" >
-            <!-- <div class="col-xs-12 col-sm-3" style="padding:0">
-              <div class="card">
-                <div class="card-header">
-                  Kategori
-                </div>
-                <ul class="list-group">
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Orang Kudus
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Katekese
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Moral
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Fabel
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    CHC
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Varia
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Pengetahuan Populer
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Sahabat Mekar
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Cergam
-                  </li>
-                </ul>
-              </div>
-            </div> -->
+        <div class="row main-row">
             <div class="col-xs-12 col-xs-12 col-sm-3" style="padding:0">
                 <div class="card editor-desk">
                     <div class="card-header">
@@ -76,6 +43,7 @@ $gambar_ujud_doa = get_field('gambar_ujud_doa');
                             <?php
                             $bible_message_image = $bible_message["image"];
                             $bible_message_text = $bible_message["text"];
+                            $bible_message_date = $bible_message["date"];
                             ?>
                             <?php if( $bible_message_image ): ?>
                                 <img class="image-full image-center" src="<?php echo $bible_message_image ?>" alt="Gambar Dari Meja Redaksi">
@@ -83,160 +51,98 @@ $gambar_ujud_doa = get_field('gambar_ujud_doa');
                             <p class="card-text">
                                 <?php echo $bible_message_text ?>
                             </p>
+                            <small class="text-right w-100 d-block">
+                                <?php echo $bible_message_date ?>
+                            </small>
                         <?php endif ?>
                     </div>
                 </div>
-                <div class="row" style="margin-bottom: 5em;">
-                    <div class="col">
-                        <h5 class="text-center w-100">Tema</h5>
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="row">
-                                        <div class="col">
-                                            <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Pertama" alt="Cerita Pertama">
-                                        </div>
-                                        <div class="col">
-                                            <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Kedua" alt="Cerita kedua">
-                                        </div>
+                <div class="row cerpen">
+                    <h4 class="w-100 text-center">Cerpen</h4>
+                    <?php if ( $short_story ): the_row() ?>
+                        <?php for($x = 0; $x < count($short_story); $x++) {?>
+                        <?php
+                            $short_story_title = $short_story[$x]["title"];
+                            $short_story_image = $short_story[$x]["image"];
+                            $short_story_text = $short_story[$x]["text"];
+                        ?>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <?php echo $short_story_title ?>
                                     </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col">
-                                            <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Ketiga" alt="Cerita Ketiga">
-                                        </div>
-                                        <div class="col">
-                                            <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Keempat" alt="Cerita Keempat">
-                                        </div>
+                                    <div class="card-body">
+                                        <?php if( $short_story_image ): ?>
+                                            <img class="d-block w-100" src="<?php echo $short_story_image ?>" alt="<?php echo $short_story_title ?>">
+                                        <?php endif ?>
+                                        <p class="card-text">
+                                            <?php echo $short_story_text ?>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            </ol>
+                        <?php } ?>
+                    <?php endif ?>
+                </div>
+                <div class="row cergam">
+                    <h4 class="w-100 text-center">Cergam</h4>
+                    <?php if ( $image_story_block ): the_row() ?>
+                        <?php for($x = 0; $x < count($image_story_block); $x++) {?>
+                            <?php
+                            $image_story_block_title = $image_story_block[$x]["title"];
+                            $image_story_block_image = $image_story_block[$x]["image"];
+                            $image_story_block_text = $image_story_block[$x]["text"];
+                            ?>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <?php echo $image_story_block_title ?>
+                                    </div>
+                                    <div class="card-body">
+                                        <?php if( $image_story_block_image ): ?>
+                                            <img class="d-block w-100" src="<?php echo $image_story_block_image ?>" alt="<?php echo $image_story_block_title ?>>">
+                                        <?php endif ?>
+                                        <p class="card-text">
+                                            <?php echo $image_story_block_text ?>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    <?php endif ?>
+
+                    <?php if ( $image_story_block_large ): the_row() ?>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-12">
+                        <div class="card">
+                            <?php
+                                $image_story_block_large_title = $image_story_block_large[0]["title"];
+                                $image_story_block_large_content = $image_story_block_large[0]["content"];
+                            ?>
+                            <div class="card-header">
+                                <?php echo $image_story_block_large_title ?>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <?php for($x = 0; $x < count($image_story_block_large_content); $x++) { ?>
+                                        <?php
+                                        $image_story_block_large_content_image = $image_story_block_large_content[$x]["image"];
+                                        $image_story_block_large_content_text = $image_story_block_large_content[$x]["text"];
+                                        ?>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <img class="d-block w-100" src="<?php echo $image_story_block_large_content_image ?>" alt="<?php echo $image_story_block_large_content_image ?>">
+                                        <?php echo $image_story_block_large_content_text ?>
+                                    </div>
+                                    <?php } ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row" style="margin-bottom: 5em;">
-                    <div class="col">
-                        <h5 class="text-center w-100">Moral</h5>
-                        <img class="d-block w-100" src="https://via.placeholder.com/300x300.png?text=Cerita+Moral" alt="Cerita Moral">
-                        <p class="text-center w-100">Cerita Moral</p>
-                    </div>
-                    <div class="col">
-                        <h5 class="text-center w-100">Varia</h5>
-                        <img class="d-block w-100" src="https://via.placeholder.com/300x300.png?text=Cerita+Varia" alt="Cerita Varia">
-                        <p class="text-center w-100">Cerita Varia</p>
-                    </div>
-                </div>
-                <div class="row" style="margin-bottom: 5em;">
-                    <h4 class="w-100 text-center">Cergam</h4>
-                    <div class="col">
-                        <h5 class="text-center w-100">Sr. Beata</h5>
-                        <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Sr.Beata" alt="Cerita Moral">
-                        <p class="text-center w-100">Cerita Sr.Beata</p>
-                    </div>
-                    <div class="col">
-                        <h5 class="text-center w-100">Friska</h5>
-                        <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Varia">
-                        <p class="text-center w-100">Cerita Friska</p>
-                    </div>
+                    <?php endif ?>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-3">
-                <button class="btn btn-primary btn-menu">MENU</button>
-                <div class="row" style="margin-bottom:1em">
-                </div>
-                <div class="row">
-                    <img class="d-block w-100" src="<?php echo $gambar_ujud_doa ?>" alt="Gambar Ujud Doa">
-                </div>
-                <div class="row">
-                    <h5 class="text-center w-100" style="margin-top: 1em;">Friska</h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-5">
-                                    <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Moral">
-                                </div>
-                                <div class="col-xs-12 col-sm-7">
-                                    Friska 1
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-5">
-                                    <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Moral">
-                                </div>
-                                <div class="col-xs-12 col-sm-7">
-                                    Friska 2
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-5">
-                                    <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Moral">
-                                </div>
-                                <div class="col-xs-12 col-sm-7">
-                                    Friska 3
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-5">
-                                    <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Moral">
-                                </div>
-                                <div class="col-xs-12 col-sm-7">
-                                    Friska 4
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-5">
-                                    <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Moral">
-                                </div>
-                                <div class="col-xs-12 col-sm-7">
-                                    Friska 5
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-5">
-                                    <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Moral">
-                                </div>
-                                <div class="col-xs-12 col-sm-7">
-                                    Friska 6
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-5">
-                                    <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Moral">
-                                </div>
-                                <div class="col-xs-12 col-sm-7">
-                                    Friska 7
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-5">
-                                    <img class="d-block w-100" src="https://via.placeholder.com/300x200.png?text=Cerita+Friska" alt="Cerita Moral">
-                                </div>
-                                <div class="col-xs-12 col-sm-7">
-                                    Friska 8
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <div class="col-xs-12 col-sm-3" style="padding:0">
+<!--                <button class="btn btn-primary btn-menu">MENU</button>-->
+                <img class="d-block w-100" src="<?php echo $gambar_ujud_doa ?>" alt="Gambar Ujud Doa">
             </div>
         </div>
     </div>

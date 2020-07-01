@@ -74,7 +74,7 @@ html {
 
 .fixed-nav .header-logo .navbar-brand {
   width: 100%;
-  margin: 1em;
+  margin: 1em 1em 0 1em;
 }
 .fixed-nav .header-logo .navbar-brand img {
   width: 100%;
@@ -84,9 +84,12 @@ html {
 
 footer {
   background-color: var(--color-gray);
-  color: var(--color-white);
-  /* height: 25vh; */
   padding: 2em;
+}
+
+footer .list-group .list-group-item {
+  background: none !important;
+  border: none;
 }
 
 footer img {
@@ -97,21 +100,21 @@ footer img {
 
 /* Homepage Style */
 
-/*.editor-desk {*/
-/*  margin-top: 2rem;*/
-/*}*/
+.page-template-page-homepage .main-row {
+  margin:0;
+}
 
-.editor-desk .card-header {
+.page-template-page-homepage .card-header {
   text-align: center;
   font-weight: bold;
   background-color: var(--color-mekar-magenta);
 }
 
-.editor-desk .card-body {
+.page-template-page-homepage .card-body {
   background-color: var(--color-mekar-yellow);
 }
 
-.btn-menu {
+.page-template-page-homepage .btn-menu {
   width: 100%;
   background-color: var(--color-mekar-purple);
   padding: 0.75em;
@@ -120,10 +123,21 @@ footer img {
   border: none;
 }
 
-.carousel-indicators {
+.page-template-page-homepage .cerpen {
+  margin-top: 2em;
+}
+.page-template-page-homepage .cerpen,
+.page-template-page-homepage .cergam  {
+  margin-bottom: 1em
+}
+.page-template-page-homepage .cerpen .card,
+.page-template-page-homepage .cergam .card {
+  margin-bottom: 1em;
+}
+.page-template-page-homepage .carousel-indicators {
   position: relative
 }
-.carousel-indicators li {
+.page-template-page-homepage .carousel-indicators li {
   border-radius: 100%;
   width: 10px;
   height: 10px;
