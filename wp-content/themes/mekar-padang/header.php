@@ -15,7 +15,11 @@
   <div class="container-fluid">
     <div class="row text-center header-logo">
       <a class="navbar-brand" href="<?php echo get_home_url() ?>">
-        <img class="image-full" src="<?php echo theme_image('mekar.jpeg')?>" loading="lazy"/>
+          <?php
+              $custom_logo_id = get_theme_mod( 'custom_logo' );
+              $imageLogo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+          ?>
+        <img class="image-full" src="<?php echo $imageLogo[0];?>"/>
       </a>
     </div>
   </div>

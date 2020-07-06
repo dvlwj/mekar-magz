@@ -12,77 +12,128 @@ $image_story_block_large = get_field('image_story_block_large');
 
     <div class="container-fluid">
         <div class="row main-row">
-            <div class="col-xs-12 col-xs-12 col-sm-3" style="padding:0">
+            <div class="col-xs-12 col-sm-3 left-column">
+                <button class="btn btn-primary btn-menu" data-toggle="collapse" data-target="#menu">MENU</button>
+                <div id="menu" class="collapse">
+                    <div class="list-group">
+                        <a href="<?php echo get_site_url().'/meja_redaksi' ?>" class="list-group-item list-group-item-action">Dari Meja Redaksi</a>
+                        <a href="<?php echo get_site_url().'/pesan_kitab_suci' ?>" class="list-group-item list-group-item-action">Pesan Kitab Suci</a>
+                        <a href="<?php echo get_site_url().'/ujud_doa' ?>" class="list-group-item list-group-item-action">Ujud Doa Bapa Suci</a>
+                        <a href="<?php echo get_site_url().'/cerita_pendek' ?>" class="list-group-item list-group-item-action">Cerita Pendek</a>
+                    </div>
+                </div>
                 <div class="card editor-desk">
                     <div class="card-header">
                         DARI MEJA REDAKSI
                     </div>
                     <div class="card-body">
-                        <?php if ( $editor_desk ): the_row() ?>
-                            <?php
-                                $editor_desk_image = $editor_desk["image"];
-                                $editor_desk_text = $editor_desk["text"];
-                            ?>
-                            <?php if( $editor_desk_image ): ?>
-                                <img class="image-full image-center" src="<?php echo $editor_desk_image ?>" alt="Gambar Dari Meja Redaksi">
-                            <?php endif ?>
-                            <p class="card-text">
-                                <?php echo $editor_desk_text ?>
-                            </p>
-                        <?php endif ?>
+                        <?php
+                            $categoryID =  isset($_GET['cat']) ? $_GET['cat'] : '0';
+                            $args = array(
+                                'post_type' => 'meja_redaksi',
+                                'post_status' => 'publish',
+                                'cat' => $categoryID,
+                                'order_by' => 'publish_date',
+                                'posts_per_page' => 1,
+                                'order' => 'desc',
+                            );
+                        ?>
+                        <?php
+                            $new_query = new WP_Query ($args);
+                            $foundPostsCount = $new_query->found_posts;
+                            if ($new_query->have_posts()) {
+                                while($new_query->have_posts()){
+                                    $new_query->the_post();
+                        ?>
+                                <div class="row flex-center row-feed">
+                                    <div class="col">
+                                        <img class="img-fluid post-thumbnail" src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo the_post_thumbnail_url() ?>"/>
+                                        <h5 class="text-center"><?php the_title() ?></h5>
+                                        <?php echo get_excerpt();?>
+                                    </div>
+                                </div>
+                        <?php
+                            }
+                        }
+                        wp_reset_postdata();
+                        ?>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6">
-                <div class="card editor-desk">
+            <div class="col-xs-12 col-sm-6 center-column">
+                <div class="card">
                     <div class="card-header">
                         PESAN KITAB SUCI
                     </div>
                     <div class="card-body">
-                        <?php if ( $bible_message ): the_row() ?>
-                            <?php
-                            $bible_message_image = $bible_message["image"];
-                            $bible_message_text = $bible_message["text"];
-                            $bible_message_date = $bible_message["date"];
-                            ?>
-                            <?php if( $bible_message_image ): ?>
-                                <img class="image-full image-center" src="<?php echo $bible_message_image ?>" alt="Gambar Dari Meja Redaksi">
-                            <?php endif ?>
-                            <p class="card-text">
-                                <?php echo $bible_message_text ?>
-                            </p>
-                            <small class="text-right w-100 d-block">
-                                <?php echo $bible_message_date ?>
-                            </small>
-                        <?php endif ?>
-                    </div>
-                </div>
-                <div class="row cerpen">
-                    <h4 class="w-100 text-center">Cerpen</h4>
-                    <?php if ( $short_story ): the_row() ?>
-                        <?php for($x = 0; $x < count($short_story); $x++) {?>
                         <?php
-                            $short_story_title = $short_story[$x]["title"];
-                            $short_story_image = $short_story[$x]["image"];
-                            $short_story_text = $short_story[$x]["text"];
-                        ?>
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <?php echo $short_story_title ?>
-                                    </div>
-                                    <div class="card-body">
-                                        <?php if( $short_story_image ): ?>
-                                            <img class="d-block w-100" src="<?php echo $short_story_image ?>" alt="<?php echo $short_story_title ?>">
-                                        <?php endif ?>
-                                        <p class="card-text">
-                                            <?php echo $short_story_text ?>
-                                        </p>
+                        $categoryID =  isset($_GET['cat']) ? $_GET['cat'] : '0';
+                        $args = array(
+                            'post_type' => 'pesan_kitab_suci',
+                            'post_status' => 'publish',
+                            'cat' => $categoryID,
+                            'order_by' => 'publish_date',
+                            'posts_per_page' => 1,
+                            'order' => 'desc',
+                        );
+                        $new_query = new WP_Query ($args);
+                        $foundPostsCount = $new_query->found_posts;
+                        if ($new_query->have_posts()) {
+                            while($new_query->have_posts()){
+                                $new_query->the_post();
+                                $date = get_the_date('j F Y');
+                                ?>
+                                <div class="row flex-center row-feed">
+                                    <div class="col">
+                                        <p class="text-center"><?php echo $date; ?></p>
+                                        <img class="img-fluid post-thumbnail" src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo the_post_thumbnail_url() ?>"/>
+                                        <h5 class="text-center"><?php the_title() ?></h5>
+                                        <?php echo get_excerpt();?>
                                     </div>
                                 </div>
-                            </div>
-                        <?php } ?>
-                    <?php endif ?>
+                                <?php
+                            }
+                        }
+                        wp_reset_postdata();
+                        ?>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        CERPEN
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                        <?php
+                        $categoryID =  isset($_GET['cat']) ? $_GET['cat'] : '0';
+                        $args = array(
+                            'post_type' => 'cerita_pendek',
+                            'post_status' => 'publish',
+                            'cat' => $categoryID,
+                            'order_by' => 'publish_date',
+                            'posts_per_page' => 2,
+                            'order' => 'desc',
+                        );
+                        $new_query = new WP_Query ($args);
+                        $foundPostsCount = $new_query->found_posts;
+                        if ($new_query->have_posts()) {
+                            while($new_query->have_posts()){
+                                $new_query->the_post();
+                                $date = get_the_date('j F Y');
+                                ?>
+                                    <div class="col">
+                                        <img class="image-full image-center post-thumbnail image-cerpen" src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo the_post_thumbnail_url() ?>"/>
+                                        <p class="text-center"><?php echo $date; ?></p>
+                                        <h5 class="text-center"><?php the_title() ?></h5>
+                                        <?php echo get_excerpt();?>
+                                    </div>
+                                <?php
+                            }
+                        }
+                        wp_reset_postdata();
+                        ?>
+                        </div>
+                    </div>
                 </div>
                 <div class="row cergam">
                     <h4 class="w-100 text-center">Cergam</h4>
@@ -140,9 +191,35 @@ $image_story_block_large = get_field('image_story_block_large');
                     <?php endif ?>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-3" style="padding:0">
-<!--                <button class="btn btn-primary btn-menu">MENU</button>-->
-                <img class="d-block w-100" src="<?php echo $gambar_ujud_doa ?>" alt="Gambar Ujud Doa">
+            <div class="col-xs-12 col-sm-3 right-column">
+                <?php
+                $categoryID =  isset($_GET['cat']) ? $_GET['cat'] : '0';
+                $args = array(
+                    'post_type' => 'ujud_doa',
+                    'post_status' => 'publish',
+                    'cat' => $categoryID,
+                    'order_by' => 'publish_date',
+                    'posts_per_page' => 1,
+                    'order' => 'desc',
+                );
+                ?>
+                <?php
+                $new_query = new WP_Query ($args);
+                $foundPostsCount = $new_query->found_posts;
+                if ($new_query->have_posts()) {
+                    while($new_query->have_posts()){
+                        $new_query->the_post();
+                        ?>
+                        <div class="row flex-center row-feed">
+                            <div class="col">
+                                <img class="img-fluid post-thumbnail" src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo the_post_thumbnail_url() ?>"/>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                }
+                wp_reset_postdata();
+                ?>
             </div>
         </div>
     </div>

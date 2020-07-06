@@ -17,18 +17,6 @@
   color: var(--color-gray);
 }
 
-.fa-youtube:hover {
-  color: #c4302b;
-}
-
-.fa-facebook:hover {
-  color: #3b5998;
-}
-
-.fa-instagram:hover {
-  color: #3f729b;
-}
-
 .image-full {
   max-width: 100%;
   max-height: 100%;
@@ -40,6 +28,36 @@
   display: block;
 }
 
+.row {
+  margin: 0;
+}
+
+.text-bold {
+  font-weight:bold;
+}
+
+.thumbnail-article {
+  margin-bottom: 2em;
+}
+
+.btn-menu {
+  width: 100%;
+  background-color: var(--color-mekar-purple) !important;
+  padding: 0.75em;
+  margin-bottom: 1em;
+  border-radius: 0;
+  border: none;
+}
+.btn-menu:active,
+.btn-menu:focus,
+.btn-menu:hover {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: var(--color-mekar-purple) !important;
+}
+#menu {
+  margin-bottom: 1em;
+}
 /* .hidden {
   display: none;
 } */
@@ -83,6 +101,7 @@ html {
 /* Footer Style */
 
 footer {
+  margin-top: 2rem;
   background-color: var(--color-gray);
   padding: 2em;
 }
@@ -104,23 +123,25 @@ footer img {
   margin:0;
 }
 
+.page-template-page-homepage .row-feed .post-thumbnail{
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.page-template-page-homepage .card {
+  margin-bottom: 2em;
+}
+
 .page-template-page-homepage .card-header {
   text-align: center;
   font-weight: bold;
-  background-color: var(--color-mekar-magenta);
+  /*background-color: var(--color-mekar-magenta);*/
 }
 
 .page-template-page-homepage .card-body {
-  background-color: var(--color-mekar-yellow);
-}
-
-.page-template-page-homepage .btn-menu {
-  width: 100%;
-  background-color: var(--color-mekar-purple);
-  padding: 0.75em;
-  margin-bottom: 2em;
-  border-radius: 0;
-  border: none;
+  /*background-color: var(--color-mekar-yellow);*/
 }
 
 .page-template-page-homepage .cerpen {
@@ -142,4 +163,18 @@ footer img {
   width: 10px;
   height: 10px;
   background-color: var(--color-crimson);
+}
+
+@media (max-width:510px) {
+  .left-column,
+  .center-column,
+  .right-column {
+    margin-top: 2rem;
+  }
+  .fixed-nav .header-logo .navbar-brand {
+    margin: 0;
+  }
+  .fixed-nav .header-logo .navbar-brand img {
+    max-width: 100%;
+  }
 }
