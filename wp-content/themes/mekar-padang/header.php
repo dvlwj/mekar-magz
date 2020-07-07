@@ -19,7 +19,17 @@
               $custom_logo_id = get_theme_mod( 'custom_logo' );
               $imageLogo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
           ?>
-        <img class="image-full" src="<?php echo $imageLogo[0];?>"/>
+          <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-3"></div>
+              <div class="col-xs-12 col-sm-12 col-md-6">
+                  <img class="image-full" src="<?php echo $imageLogo[0];?>"/>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-3">
+                  <div class="col">
+                      <img class="image-full" src="<?php echo theme_image('redaksi.jpg') ?>"/>
+                  </div>
+              </div>
+          </div>
       </a>
     </div>
   </div>

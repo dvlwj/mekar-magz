@@ -1,6 +1,6 @@
 <?php
     /**
-    * Template Name: Pesan Kitab Suci
+    * Template Name: Orang Kudus
     */
     get_header();
     $postID = get_the_ID();
