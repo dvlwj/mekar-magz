@@ -120,12 +120,12 @@ function theme_icon($icon){
     return  get_stylesheet_directory_uri() . '/assets/icon/' . $icon;
 }
 
-function get_excerpt(){
+function get_excerpt($character_count){
     $excerpt = get_the_content();
     $excerpt = preg_replace(" ([.*?])",'',$excerpt);
     $excerpt = strip_shortcodes($excerpt);
     $excerpt = strip_tags($excerpt);
-    $excerpt = substr($excerpt, 0, 300);
+    $excerpt = substr($excerpt, 0, $character_count);
     $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
     $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
     $excerpt = $excerpt.'... <a href="'.get_the_permalink().'">Lebih Lengkap</a>';

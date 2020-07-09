@@ -8,6 +8,8 @@
             <a href="<?php echo get_site_url().'/cerita_pendek' ?>" class="list-group-item list-group-item-action">Cerita Pendek</a>
             <a href="<?php echo get_site_url().'/cerita_bergambar' ?>" class="list-group-item list-group-item-action">Cerita Bergambar</a>
             <a href="<?php echo get_site_url().'/orang_kudus' ?>" class="list-group-item list-group-item-action">Orang Kudus</a>
+            <a href="<?php echo get_site_url().'/ruang_agama' ?>" class="list-group-item list-group-item-action">Ruang Agama</a>
+            <a href="<?php echo get_site_url().'/puisi' ?>" class="list-group-item list-group-item-action">Puisi</a>
         </div>
     </div>
     <div class="card editor-desk">
@@ -36,7 +38,81 @@
                         <div class="col">
                             <img class="img-fluid post-thumbnail" src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo the_post_thumbnail_url() ?>"/>
                             <h5 class="text-center"><?php the_title() ?></h5>
-                            <?php echo get_excerpt();?>
+                            <?php echo get_excerpt(300);?>
+                        </div>
+                    </div>
+                    <?php
+                }
+            }
+            wp_reset_postdata();
+            ?>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            RUANG AGAMA KATOLIK
+        </div>
+        <div class="card-body">
+            <?php
+            $categoryID =  isset($_GET['cat']) ? $_GET['cat'] : '0';
+            $args = array(
+                'post_type' => 'ruang_agama',
+                'post_status' => 'publish',
+                'cat' => $categoryID,
+                'order_by' => 'publish_date',
+                'posts_per_page' => 1,
+                'order' => 'desc',
+            );
+            $new_query = new WP_Query ($args);
+            $foundPostsCount = $new_query->found_posts;
+            if ($new_query->have_posts()) {
+                while($new_query->have_posts()){
+                    $new_query->the_post();
+                    $date = get_the_date('j F Y');
+                    ?>
+                    <div class="row flex-center row-feed">
+                        <div class="col">
+                            <p class="text-center"><?php echo $date; ?></p>
+                            <img class="img-fluid post-thumbnail" src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo the_post_thumbnail_url() ?>"/>
+                            <h5 class="text-center"><?php the_title() ?></h5>
+                            <?php echo get_excerpt(300);?>
+                        </div>
+                    </div>
+                    <?php
+                }
+            }
+            wp_reset_postdata();
+            ?>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            PUISI
+        </div>
+        <div class="card-body">
+            <?php
+            $categoryID =  isset($_GET['cat']) ? $_GET['cat'] : '0';
+            $args = array(
+                'post_type' => 'puisi',
+                'post_status' => 'publish',
+                'cat' => $categoryID,
+                'order_by' => 'publish_date',
+                'posts_per_page' => 1,
+                'order' => 'desc',
+            );
+            $new_query = new WP_Query ($args);
+            $foundPostsCount = $new_query->found_posts;
+            if ($new_query->have_posts()) {
+                while($new_query->have_posts()){
+                    $new_query->the_post();
+                    $date = get_the_date('j F Y');
+                    ?>
+                    <div class="row flex-center row-feed">
+                        <div class="col">
+                            <p class="text-center"><?php echo $date; ?></p>
+                            <img class="img-fluid post-thumbnail" src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo the_post_thumbnail_url() ?>"/>
+                            <h5 class="text-center"><?php the_title() ?></h5>
+                            <?php echo get_excerpt(300);?>
                         </div>
                     </div>
                     <?php

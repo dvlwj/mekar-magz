@@ -40,7 +40,7 @@
                             <div class="col">
                                 <h5 class="text-left"><?php the_title() ?></h5>
                                 <p class="text-left"><?php echo $date; ?></p>
-                                <?php echo get_excerpt();?>
+                                <?php echo get_excerpt(100);?>
                             </div>
                         </div>
                         <hr/>

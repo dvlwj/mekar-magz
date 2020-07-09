@@ -41,7 +41,7 @@ $image_story_block_large = get_field('image_story_block_large');
                                         <p class="text-center"><?php echo $date; ?></p>
                                         <img class="img-fluid post-thumbnail" src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo the_post_thumbnail_url() ?>"/>
                                         <h5 class="text-center"><?php the_title() ?></h5>
-                                        <?php echo get_excerpt();?>
+                                        <?php echo get_excerpt(300);?>
                                     </div>
                                 </div>
                                 <?php
@@ -74,11 +74,11 @@ $image_story_block_large = get_field('image_story_block_large');
                                 $new_query->the_post();
                                 $date = get_the_date('j F Y');
                                 ?>
-                                    <div class="col">
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-cerpen">
                                         <img class="image-full image-center post-thumbnail image-cerpen" src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo the_post_thumbnail_url() ?>"/>
                                         <p class="text-center"><?php echo $date; ?></p>
                                         <h5 class="text-center"><?php the_title() ?></h5>
-                                        <?php echo get_excerpt();?>
+                                        <?php echo get_excerpt(100);?>
                                     </div>
                                 <?php
                             }
@@ -111,11 +111,11 @@ $image_story_block_large = get_field('image_story_block_large');
                                 $new_query->the_post();
                                 $date = get_the_date('j F Y');
                                 ?>
-                                    <div class="col">
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-cergam">
                                         <img class="image-full image-center post-thumbnail image-cerpen" src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo the_post_thumbnail_url() ?>"/>
                                         <p class="text-center"><?php echo $date; ?></p>
                                         <h5 class="text-center"><?php the_title() ?></h5>
-                                        <?php echo get_excerpt();?>
+                                        <?php echo get_excerpt(100);?>
                                     </div>
                                 <?php
                             }
@@ -152,7 +152,7 @@ $image_story_block_large = get_field('image_story_block_large');
                                         <img class="image-full image-center post-thumbnail image-cerpen" src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo the_post_thumbnail_url() ?>"/>
                                         <p class="text-center"><?php echo $date; ?></p>
                                         <h5 class="text-center"><?php the_title() ?></h5>
-                                        <?php echo get_excerpt();?>
+                                        <?php echo get_excerpt(300);?>
                                     </div>
                                 <?php
                             }
