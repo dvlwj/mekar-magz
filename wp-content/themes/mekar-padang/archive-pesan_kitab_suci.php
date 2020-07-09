@@ -54,13 +54,13 @@
                         <?php
                         for($i=0;$i<($foundPostsCount/10);$i++) {
                             $tempNumb = $i + 1;
-                            if($basename == $tempNumb || ($tempNumb == 1 && $basename == 'pesan_kitab_suci')){
+                            if($basename == $tempNumb || ($tempNumb == 1 && $basename == 'pesan-kitab-suci')){
                                 ?>
-                                <li class="page-item active"><a class="page-link" href="<?php echo get_site_url() . '/pesan_kitab_suci/page/' . $tempNumb ?>"><?php echo $i + 1 ?></a></li>
+                                <li class="page-item active"><a class="page-link" href="<?php echo get_site_url() . '/pesan-kitab-suci/page/' . $tempNumb ?>"><?php echo $i + 1 ?></a></li>
                                 <?php
                             } else {
                                 ?>
-                                <li class="page-item"><a class="page-link" href="<?php echo get_site_url() . '/pesan_kitab_suci/page/' . $tempNumb ?>"><?php echo $i + 1 ?></a></li>
+                                <li class="page-item"><a class="page-link" href="<?php echo get_site_url() . '/pesan-kitab-suci/page/' . $tempNumb ?>"><?php echo $i + 1 ?></a></li>
                                 <?php
                             }
                         }

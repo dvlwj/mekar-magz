@@ -54,13 +54,13 @@
                         <?php
                         for($i=0;$i<($foundPostsCount/10);$i++) {
                             $tempNumb = $i + 1;
-                            if($basename == $tempNumb || ($tempNumb == 1 && $basename == 'cerita_bergambar')){
+                            if($basename == $tempNumb || ($tempNumb == 1 && $basename == 'cerita-bergambar')){
                                 ?>
-                                <li class="page-item active"><a class="page-link" href="<?php echo get_site_url() . '/cerita_bergambar/page/' . $tempNumb ?>"><?php echo $i + 1 ?></a></li>
+                                <li class="page-item active"><a class="page-link" href="<?php echo get_site_url() . '/cerita-bergambar/page/' . $tempNumb ?>"><?php echo $i + 1 ?></a></li>
                                 <?php
                             } else {
                                 ?>
-                                <li class="page-item"><a class="page-link" href="<?php echo get_site_url() . '/cerita_bergambar/page/' . $tempNumb ?>"><?php echo $i + 1 ?></a></li>
+                                <li class="page-item"><a class="page-link" href="<?php echo get_site_url() . '/cerita-bergambar/page/' . $tempNumb ?>"><?php echo $i + 1 ?></a></li>
                                 <?php
                             }
                         }

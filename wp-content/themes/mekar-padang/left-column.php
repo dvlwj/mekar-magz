@@ -2,14 +2,16 @@
     <button class="btn btn-primary btn-menu" data-toggle="collapse" data-target="#menu">MENU</button>
     <div id="menu" class="collapse">
         <div class="list-group">
-            <a href="<?php echo get_site_url().'/meja_redaksi' ?>" class="list-group-item list-group-item-action">Dari Meja Redaksi</a>
-            <a href="<?php echo get_site_url().'/pesan_kitab_suci' ?>" class="list-group-item list-group-item-action">Pesan Kitab Suci</a>
-            <a href="<?php echo get_site_url().'/ujud_doa' ?>" class="list-group-item list-group-item-action">Ujud Doa Bapa Suci</a>
-            <a href="<?php echo get_site_url().'/cerita_pendek' ?>" class="list-group-item list-group-item-action">Cerita Pendek</a>
-            <a href="<?php echo get_site_url().'/cerita_bergambar' ?>" class="list-group-item list-group-item-action">Cerita Bergambar</a>
-            <a href="<?php echo get_site_url().'/orang_kudus' ?>" class="list-group-item list-group-item-action">Orang Kudus</a>
-            <a href="<?php echo get_site_url().'/ruang_agama' ?>" class="list-group-item list-group-item-action">Ruang Agama</a>
+            <a href="<?php echo get_site_url().'/meja-redaksi' ?>" class="list-group-item list-group-item-action">Dari Meja Redaksi</a>
+            <a href="<?php echo get_site_url().'/pesan-kitab-suci' ?>" class="list-group-item list-group-item-action">Pesan Kitab Suci</a>
+            <a href="<?php echo get_site_url().'/ujud-doa' ?>" class="list-group-item list-group-item-action">Ujud Doa Bapa Suci</a>
+            <a href="<?php echo get_site_url().'/cerita-pendek' ?>" class="list-group-item list-group-item-action">Cerita Pendek</a>
+            <a href="<?php echo get_site_url().'/cerita-bergambar' ?>" class="list-group-item list-group-item-action">Cerita Bergambar</a>
+            <a href="<?php echo get_site_url().'/orang-kudus' ?>" class="list-group-item list-group-item-action">Orang Kudus</a>
+            <a href="<?php echo get_site_url().'/pengetahuan-agama' ?>" class="list-group-item list-group-item-action">Pengetahuan Agama Katolik</a>
             <a href="<?php echo get_site_url().'/puisi' ?>" class="list-group-item list-group-item-action">Puisi</a>
+            <a href="<?php echo get_site_url().'/sekilas-info' ?>" class="list-group-item list-group-item-action">Sekilas Info</a>
+            <a href="<?php echo get_site_url().'/sahabat-mekar' ?>" class="list-group-item list-group-item-action">Sahabat Mekar</a>
         </div>
     </div>
     <div class="card editor-desk">
@@ -50,13 +52,13 @@
     </div>
     <div class="card">
         <div class="card-header">
-            RUANG AGAMA KATOLIK
+            PENGETAHUAN AGAMA KATOLIK
         </div>
         <div class="card-body">
             <?php
             $categoryID =  isset($_GET['cat']) ? $_GET['cat'] : '0';
             $args = array(
-                'post_type' => 'ruang_agama',
+                'post_type' => 'pengetahuan_agama',
                 'post_status' => 'publish',
                 'cat' => $categoryID,
                 'order_by' => 'publish_date',
@@ -75,7 +77,7 @@
                             <p class="text-center"><?php echo $date; ?></p>
                             <img class="img-fluid post-thumbnail" src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo the_post_thumbnail_url() ?>"/>
                             <h5 class="text-center"><?php the_title() ?></h5>
-                            <?php echo get_excerpt(300);?>
+                            <?php echo get_excerpt(100);?>
                         </div>
                     </div>
                     <?php

@@ -1,6 +1,6 @@
 <?php
     /**
-    * Template Name: Ruang Agama
+    * Template Name: Sahabat Mekar
     */
     get_header();
     $postID = get_the_ID();
