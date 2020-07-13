@@ -1,3 +1,10 @@
+<?php /* Template Name: Page - Left Column */ ?>
+
+<?php
+$left_ads_2x1 = get_field('$left_ads_2x1');
+$left_ads_4x1 = get_field('$left_ads_4x1');
+?>
+
 <div class="col-xs-12 col-sm-3 left-column">
     <button class="btn btn-primary btn-menu" data-toggle="collapse" data-target="#menu">MENU</button>
     <div id="menu" class="collapse">
@@ -53,13 +60,13 @@
     </div>
     <div class="card">
         <div class="card-header">
-            PENGETAHUAN AGAMA KATOLIK
+            PESAN KITAB SUCI
         </div>
         <div class="card-body">
             <?php
             $categoryID =  isset($_GET['cat']) ? $_GET['cat'] : '0';
             $args = array(
-                'post_type' => 'pengetahuan_agama',
+                'post_type' => 'pesan_kitab_suci',
                 'post_status' => 'publish',
                 'cat' => $categoryID,
                 'order_by' => 'publish_date',
@@ -78,7 +85,7 @@
                             <p class="text-center"><?php echo $date; ?></p>
                             <img class="img-fluid post-thumbnail" src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo the_post_thumbnail_url() ?>"/>
                             <h5 class="text-center"><?php the_title() ?></h5>
-                            <?php echo get_excerpt(100);?>
+                            <?php echo get_excerpt(300);?>
                         </div>
                     </div>
                     <?php

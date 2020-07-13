@@ -1,3 +1,5 @@
+<?php /* Template Name: Page - Right Column */ ?>
+
 <div class="col-xs-12 col-sm-3 right-column">
     <?php
     $categoryID =  isset($_GET['cat']) ? $_GET['cat'] : '0';
@@ -32,9 +34,29 @@
             <?php echo do_shortcode('[apvc_embed type="customized" border_size="2" border_radius="5" background_color="" font_size="14" font_style="" font_color="" counter_label="Visits:" today_cnt_label="Today:" global_cnt_label="Jumlah Pengunjung:" border_color="" border_style="none" padding="5" width="200" global="true" today="false" current="false" icon_position="" widget_template="None" ]');?>
         </div>
     </div>
+    <div class="card">
+        <div class="card-header">
+            <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
+            <script type="text/javascript">
+                MRP.insert({
+                    'url':'http://live.boosfm.com:8154/;',
+                    'codec':'mp3',
+                    'volume':100,
+                    'autoplay':true,
+                    'buffering':5,
+                    'title':'BOOS 104.2 FM',
+                    'welcome':'Selamat Mendengarkan',
+                    'bgcolor':'#FFFFFF',
+                    'skin':'faredirfare',
+                    'width':320,
+                    'height':62
+                });
+            </script>
+        </div>
+    </div>
     <div class="card right-column-cerpen">
         <div class="card-header">
-            CERPEN LAIN
+            CERPEN SEBELUMNYA
         </div>
         <div class="card-body">
             <?php
@@ -74,7 +96,7 @@
     </div>
     <div class="card right-column-cergam">
         <div class="card-header">
-            CERGAM LAIN
+            CERGAM SEBELUMNYA
         </div>
         <div class="card-body">
             <?php
