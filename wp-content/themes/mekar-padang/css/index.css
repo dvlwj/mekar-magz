@@ -116,21 +116,20 @@ footer img {
   max-width: 5em !important;
 }
 
-
-/* Homepage Style */
-
 .page-template-page-homepage .main-row {
   margin:0;
 }
 
-.page-template-page-homepage .row-feed .post-thumbnail{
+.page-template-page-homepage .row-feed .post-thumbnail,
+.post-type-archive .row-feed .post-thumbnail {
   margin-bottom: 1em;
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
 
-.page-template-page-homepage .card {
+.page-template-page-homepage .card,
+.post-type-archive .card {
   margin-bottom: 2em;
 }
 
@@ -169,8 +168,6 @@ footer img {
   background-color: var(--color-crimson);
 }
 
-/* Cerita Bergambar */
-
 .single-cerita_bergambar .post-content img {
   display: block;
   width: 100%;
@@ -186,6 +183,16 @@ footer img {
   max-height: 100%;
 }
 
+.right-column-cerpen .row-feed,
+.right-column-cergam .row-feed{
+  margin-bottom: 1rem;
+}
+/*.right-column-cerpen .post-thumbnail,*/
+/*.right-column-cergam .post-thumbnail {*/
+/*  max-height: 10em;*/
+/*  height: 100%;*/
+/*  max-width: 100%;*/
+/*}*/
 
 @media (max-width:510px) {
   .left-column,

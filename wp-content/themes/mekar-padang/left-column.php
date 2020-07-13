@@ -7,6 +7,7 @@
             <a href="<?php echo get_site_url().'/ujud-doa' ?>" class="list-group-item list-group-item-action">Ujud Doa Bapa Suci</a>
             <a href="<?php echo get_site_url().'/cerita-pendek' ?>" class="list-group-item list-group-item-action">Cerita Pendek</a>
             <a href="<?php echo get_site_url().'/cerita-bergambar' ?>" class="list-group-item list-group-item-action">Cerita Bergambar</a>
+            <a href="<?php echo get_site_url().'/cerita-bersambung' ?>" class="list-group-item list-group-item-action">Cerita Bersambung</a>
             <a href="<?php echo get_site_url().'/orang-kudus' ?>" class="list-group-item list-group-item-action">Orang Kudus</a>
             <a href="<?php echo get_site_url().'/pengetahuan-agama' ?>" class="list-group-item list-group-item-action">Pengetahuan Agama Katolik</a>
             <a href="<?php echo get_site_url().'/puisi' ?>" class="list-group-item list-group-item-action">Puisi</a>

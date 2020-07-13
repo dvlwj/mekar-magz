@@ -90,6 +90,43 @@ $image_story_block_large = get_field('image_story_block_large');
                 </div>
                 <div class="card">
                     <div class="card-header">
+                        CERITA BERSAMBUNG
+                    </div>
+                    <div class="card-body">
+                        <?php
+                        $categoryID =  isset($_GET['cat']) ? $_GET['cat'] : '0';
+                        $args = array(
+                            'post_type' => 'cerita_bersambung',
+                            'post_status' => 'publish',
+                            'cat' => $categoryID,
+                            'order_by' => 'publish_date',
+                            'posts_per_page' => 2,
+                            'order' => 'desc',
+                        );
+                        $new_query = new WP_Query ($args);
+                        $foundPostsCount = $new_query->found_posts;
+                        if ($new_query->have_posts()) {
+                            while($new_query->have_posts()){
+                                $new_query->the_post();
+                                $date = get_the_date('j F Y');
+                                ?>
+                                <div class="row flex-center row-feed">
+                                    <div class="col">
+                                        <p class="text-center"><?php echo $date; ?></p>
+                                        <img class="img-fluid post-thumbnail" src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo the_post_thumbnail_url() ?>"/>
+                                        <h5 class="text-center"><?php the_title() ?></h5>
+                                        <?php echo get_excerpt(100);?>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                        }
+                        wp_reset_postdata();
+                        ?>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
                         CERGAM
                     </div>
                     <div class="card-body">
@@ -148,13 +185,16 @@ $image_story_block_large = get_field('image_story_block_large');
                                 $new_query->the_post();
                                 $date = get_the_date('j F Y');
                                 ?>
+                                <div class="row flex-center row-feed">
                                     <div class="col">
-                                        <img class="image-full image-center post-thumbnail image-cerpen" src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo the_post_thumbnail_url() ?>"/>
                                         <p class="text-center"><?php echo $date; ?></p>
-                                        <h5 class="text-center"><?php the_title() ?></h5>
-                                        <?php echo get_excerpt(300);?>
+                                                <img class="img-fluid post-thumbnail" src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo the_post_thumbnail_url() ?>"/>
+                                                <h5 class="text-center"><?php the_title() ?></h5>
+                                                <?php echo get_excerpt(300);?>
+
                                     </div>
-                                <?php
+                                </div>
+                        <?php
                             }
                         }
                         wp_reset_postdata();
