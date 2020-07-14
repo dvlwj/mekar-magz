@@ -1,8 +1,8 @@
 <?php /* Template Name: Page - Left Column */ ?>
 
 <?php
-$left_ads_2x1 = get_field('$left_ads_2x1');
-$left_ads_4x1 = get_field('$left_ads_4x1');
+$left_ads_2x1 = get_field('left_ads_2x1');
+$left_ads_4x1 = get_field('left_ads_4x1');
 ?>
 
 <div class="col-xs-12 col-sm-3 left-column">
@@ -57,6 +57,19 @@ $left_ads_4x1 = get_field('$left_ads_4x1');
             wp_reset_postdata();
             ?>
         </div>
+    </div>
+    <div class="row ads-block">
+        <?php
+        if($left_ads_2x1){
+            for ($i = 0; $i < sizeof($left_ads_2x1); $i++){
+                ?>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-ads">
+                    <img class="image-full" src="<?php echo $left_ads_2x1[$i]['image']; ?>" alt="ads_right_2_<?php echo $i ?>"/>
+                </div>
+                <?php
+            }
+        }
+        ?>
     </div>
     <div class="card">
         <div class="card-header">
@@ -131,5 +144,18 @@ $left_ads_4x1 = get_field('$left_ads_4x1');
             wp_reset_postdata();
             ?>
         </div>
+    </div>
+    <div class="row ads-block">
+        <?php
+        if($left_ads_4x1){
+            for ($i = 0; $i < sizeof($left_ads_4x1); $i++){
+                ?>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-ads">
+                    <img class="image-full" src="<?php echo $left_ads_4x1[$i]['image']; ?>" alt="ads_right_4_<?php echo $i ?>"/>
+                </div>
+                <?php
+            }
+        }
+        ?>
     </div>
 </div>

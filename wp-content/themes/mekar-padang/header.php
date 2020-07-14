@@ -31,11 +31,11 @@
           <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-3"></div>
               <div class="col-xs-12 col-sm-12 col-md-6">
-                  <img class="image-full" src="<?php echo $imageLogo[0];?>"/>
+                  <img class="image-full" src="<?php echo $imageLogo[0];?>" alt="website-logo"/>
               </div>
               <div class="col-xs-12 col-sm-12 col-md-3">
                   <div class="col">
-                      <img class="image-full" src="<?php echo theme_image('redaksi.jpg') ?>"/>
+                      <img class="image-full" src="<?php echo theme_image('redaksi.jpg') ?>" alt="redaksi-image"/>
                   </div>
               </div>
           </div>

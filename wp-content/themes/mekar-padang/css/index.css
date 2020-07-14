@@ -67,6 +67,19 @@
   margin-right: auto;
 }
 
+.ads-block,
+.col-ads {
+  margin-bottom: 1rem;
+}
+.gema,
+.et_terra iframe{
+  margin-bottom: 1rem;
+}
+.et_terra iframe{
+  width: 100% !important;
+  height: 15rem;
+}
+
 html {
   margin: 0 !important;
   padding: 0 !important;

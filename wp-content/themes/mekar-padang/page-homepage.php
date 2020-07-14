@@ -2,6 +2,7 @@
 
 <?php get_header(); ?>
 <?php
+    $center_ads_2x1 = get_field('center_ads_2x1');
 ?>
 
     <div class="container-fluid">
@@ -47,6 +48,19 @@
                             ?>
                         </div>
                     </div>
+                </div>
+                <div class="row ads-block">
+                    <?php
+                    if($center_ads_2x1){
+                        for ($i = 0; $i < sizeof($center_ads_2x1); $i++){
+                            ?>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-ads">
+                                <img class="image-full" src="<?php echo $center_ads_2x1[$i]['image']; ?>" alt="ads_center_2_<?php echo $i ?>"/>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
                 </div>
                 <div class="card">
                     <div class="card-header">
