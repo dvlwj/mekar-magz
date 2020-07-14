@@ -1,6 +1,6 @@
 <?php
     /**
-     * Template Name: Orang Kudus
+     * Template Name: Sahabat Mekar
      */
     get_header();
     $categoryID =  isset($_GET['cat']) ? $_GET['cat'] : '0';
@@ -17,7 +17,7 @@
             <div class="col-xs-12 col-sm-12 post-column">
                 <?php
                 $args = array(
-                    'post_type' => 'orang_kudus',
+                    'post_type' => 'sahabat_mekar',
                     'post_status' => 'publish',
                     'cat' => $categoryID,
                     'order_by' => 'publish_date',
@@ -54,13 +54,13 @@
                         <?php
                         for($i=0;$i<($foundPostsCount/10);$i++) {
                             $tempNumb = $i + 1;
-                            if($basename == $tempNumb || ($tempNumb == 1 && $basename == 'orang-kudus')){
+                            if($basename == $tempNumb || ($tempNumb == 1 && $basename == 'sahabat-mekar')){
                                 ?>
-                                <li class="page-item active"><a class="page-link" href="<?php echo get_site_url() . '/orang-kudus/page/' . $tempNumb ?>"><?php echo $i + 1 ?></a></li>
+                                <li class="page-item active"><a class="page-link" href="<?php echo get_site_url() . '/sahabat-mekar/page/' . $tempNumb ?>"><?php echo $i + 1 ?></a></li>
                                 <?php
                             } else {
                                 ?>
-                                <li class="page-item"><a class="page-link" href="<?php echo get_site_url() . '/orang-kudus/page/' . $tempNumb ?>"><?php echo $i + 1 ?></a></li>
+                                <li class="page-item"><a class="page-link" href="<?php echo get_site_url() . '/sahabat-mekar/page/' . $tempNumb ?>"><?php echo $i + 1 ?></a></li>
                                 <?php
                             }
                         }

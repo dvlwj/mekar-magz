@@ -40,7 +40,7 @@
                             <div class="col">
                                 <h5 class="text-left"><?php the_title() ?></h5>
                                 <p class="text-left"><?php echo $date; ?></p>
-                                <?php echo get_excerpt();?>
+                                <?php echo get_excerpt(100);?>
                             </div>
                         </div>
                         <hr/>
@@ -54,13 +54,13 @@
                         <?php
                         for($i=0;$i<($foundPostsCount/10);$i++) {
                             $tempNumb = $i + 1;
-                            if($basename == $tempNumb || ($tempNumb == 1 && $basename == 'meja_redaksi')){
+                            if($basename == $tempNumb || ($tempNumb == 1 && $basename == 'meja-redaksi')){
                                 ?>
-                                <li class="page-item active"><a class="page-link" href="<?php echo get_site_url() . '/meja_redaksi/page/' . $tempNumb ?>"><?php echo $i + 1 ?></a></li>
+                                <li class="page-item active"><a class="page-link" href="<?php echo get_site_url() . '/meja-redaksi/page/' . $tempNumb ?>"><?php echo $i + 1 ?></a></li>
                                 <?php
                             } else {
                                 ?>
-                                <li class="page-item"><a class="page-link" href="<?php echo get_site_url() . '/meja_redaksi/page/' . $tempNumb ?>"><?php echo $i + 1 ?></a></li>
+                                <li class="page-item"><a class="page-link" href="<?php echo get_site_url() . '/meja-redaksi/page/' . $tempNumb ?>"><?php echo $i + 1 ?></a></li>
                                 <?php
                             }
                         }

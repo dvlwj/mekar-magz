@@ -8,7 +8,7 @@
           <ul class="list-group list-group-horizontal justify-content-center">
               <li class="list-group-item">Gema</li>
               <li class="list-group-item">Mekar</li>
-              <li class="list-group-item">Boss FM</li>
+              <li class="list-group-item">Boos FM</li>
               <li class="list-group-item">Radio DB</li>
               <li class="list-group-item">Et Terra</li>
           </ul>
