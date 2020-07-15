@@ -160,7 +160,7 @@
             if ($right_ads_2x1){
                 for ($i = 0; $i < sizeof($right_ads_2x1); $i++){
         ?>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-ads">
+                    <div class="col col-ads">
                         <img class="image-full" src="<?php echo $right_ads_2x1[$i]['image']; ?>" alt="ads_right_2_<?php echo $i ?>"/>
                     </div>
         <?php
