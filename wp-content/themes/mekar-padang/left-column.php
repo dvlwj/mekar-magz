@@ -1,8 +1,8 @@
 <?php /* Template Name: Page - Left Column */ ?>
 
 <?php
-$left_ads_2x1 = get_field('left_ads_2x1');
-$left_ads_4x1 = get_field('left_ads_4x1');
+$left_ads_1x1_under_bible = get_field('left_ads_1x1_under_bible');
+$left_ads_1x1_under_poem = get_field('left_ads_1x1_under_poem');
 ?>
 
 <div class="col-xs-12 col-sm-3 left-column">
@@ -13,7 +13,7 @@ $left_ads_4x1 = get_field('left_ads_4x1');
             <a href="<?php echo get_site_url().'/pesan-kitab-suci' ?>" class="list-group-item list-group-item-action">Pesan Kitab Suci</a>
             <a href="<?php echo get_site_url().'/ujud-doa' ?>" class="list-group-item list-group-item-action">Ujud Doa Bapa Suci</a>
             <a href="<?php echo get_site_url().'/cerita-pendek' ?>" class="list-group-item list-group-item-action">Cerita Pendek</a>
-            <a href="<?php echo get_site_url().'/cerita-bergambar' ?>" class="list-group-item list-group-item-action">Cerita Bergambar</a>
+            <a href="<?php echo get_site_url().'/cerita-bergambar' ?>" class="list-group-item list-group-item-action">Cerita Bergambar Bersambung</a>
             <a href="<?php echo get_site_url().'/cerita-bersambung' ?>" class="list-group-item list-group-item-action">Cerita Bersambung</a>
             <a href="<?php echo get_site_url().'/orang-kudus' ?>" class="list-group-item list-group-item-action">Orang Kudus</a>
             <a href="<?php echo get_site_url().'/pengetahuan-agama' ?>" class="list-group-item list-group-item-action">Pengetahuan Agama Katolik</a>
@@ -58,19 +58,6 @@ $left_ads_4x1 = get_field('left_ads_4x1');
             ?>
         </div>
     </div>
-    <div class="row ads-block">
-        <?php
-        if($left_ads_2x1){
-            for ($i = 0; $i < sizeof($left_ads_2x1); $i++){
-                ?>
-                <div class="col col-ads">
-                    <img class="image-full" src="<?php echo $left_ads_2x1[$i]['image']; ?>" alt="ads_right_2_<?php echo $i ?>"/>
-                </div>
-                <?php
-            }
-        }
-        ?>
-    </div>
     <div class="card">
         <div class="card-header">
             PESAN KITAB SUCI
@@ -107,6 +94,19 @@ $left_ads_4x1 = get_field('left_ads_4x1');
             wp_reset_postdata();
             ?>
         </div>
+    </div>
+    <div class="row ads-block">
+        <?php
+        if($left_ads_1x1_under_bible){
+            for ($i = 0; $i < sizeof($left_ads_1x1_under_bible); $i++){
+                ?>
+                <div class="col col-ads">
+                    <img class="image-full" src="<?php echo $left_ads_1x1_under_bible[$i]['image']; ?>" alt="ads_left_1_<?php echo $i ?>_under_bible"/>
+                </div>
+                <?php
+            }
+        }
+        ?>
     </div>
     <div class="card">
         <div class="card-header">
@@ -147,11 +147,11 @@ $left_ads_4x1 = get_field('left_ads_4x1');
     </div>
     <div class="row ads-block">
         <?php
-        if($left_ads_4x1){
-            for ($i = 0; $i < sizeof($left_ads_4x1); $i++){
+        if($left_ads_1x1_under_poem){
+            for ($i = 0; $i < sizeof($left_ads_1x1_under_poem); $i++){
                 ?>
                 <div class="col col-ads">
-                    <img class="image-full" src="<?php echo $left_ads_4x1[$i]['image']; ?>" alt="ads_right_4_<?php echo $i ?>"/>
+                    <img class="image-full" src="<?php echo $left_ads_1x1_under_poem[$i]['image']; ?>" alt="ads_right_1_<?php echo $i ?>_under_poem"/>
                 </div>
                 <?php
             }

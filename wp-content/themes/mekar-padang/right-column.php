@@ -2,7 +2,7 @@
 
 <?php
     $right_ads_1x1 = get_field('right_ads_1x1');
-    $right_ads_2x1 = get_field('right_ads_2x1');
+    $right_ads_1x1_2nd = get_field('right_ads_1x1_2nd');
     $gema = get_field('gema');
     $et_terra = get_field('et_terra');
 ?>
@@ -41,6 +41,9 @@
             <?php echo do_shortcode('[apvc_embed type="customized" border_size="2" border_radius="5" background_color="" font_size="14" font_style="" font_color="" counter_label="Visits:" today_cnt_label="Today:" global_cnt_label="Jumlah Pengunjung:" border_color="" border_style="none" padding="5" width="200" global="true" today="false" current="false" icon_position="" widget_template="None" ]');?>
         </div>
     </div>
+    <?php if($right_ads_1x1){ ?>
+        <img class="image-full ads-block" src="<?php echo $right_ads_1x1[0]['image']; ?>" alt="ads_right_1"/>
+    <?php } ?>
     <div class="card right-column-cerpen">
         <div class="card-header">
             KARYA PELAYANAN KOMSOS PADANG
@@ -112,7 +115,7 @@
             ?>
         </div>
     </div>
-    <?php if($right_ads_1x1){ ?>
+    <?php if($right_ads_1x1_2nd){ ?>
         <img class="image-full ads-block" src="<?php echo $right_ads_1x1[0]['image']; ?>" alt="ads_right_1"/>
     <?php } ?>
     <div class="card right-column-cergam">
@@ -154,18 +157,5 @@
             wp_reset_postdata();
             ?>
         </div>
-    </div>
-    <div class="row ads-block">
-        <?php
-            if ($right_ads_2x1){
-                for ($i = 0; $i < sizeof($right_ads_2x1); $i++){
-        ?>
-                    <div class="col col-ads">
-                        <img class="image-full" src="<?php echo $right_ads_2x1[$i]['image']; ?>" alt="ads_right_2_<?php echo $i ?>"/>
-                    </div>
-        <?php
-                }
-        }
-        ?>
     </div>
 </div>
