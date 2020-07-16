@@ -195,7 +195,7 @@
                     if($center_ads_2x1_story_picture){
                         for ($i = 0; $i < sizeof($center_ads_2x1_story_picture); $i++){
                             ?>
-                            <div class="col col-ads">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-ads">
                                 <img class="image-full" src="<?php echo $center_ads_2x1_story_picture[$i]['image']; ?>" alt="ads_center_2_<?php echo $i ?>_story_picture"/>
                             </div>
                             <?php
