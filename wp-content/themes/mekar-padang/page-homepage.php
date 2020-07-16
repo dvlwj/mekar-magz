@@ -2,7 +2,11 @@
 
 <?php get_header(); ?>
 <?php
-    $center_ads_2x1 = get_field('center_ads_2x1');
+    $center_ads_2x1_saint = get_field('center_ads_2x1_saint');
+    $center_ads_1x1_saint = get_field('center_ads_1x1_saint');
+    $center_ads_2x1_story_picture = get_field('center_ads_2x1_story_picture');
+    $center_ads_1x1_story_picture = get_field('center_ads_1x1_story_picture');
+    $center_ads_1x1_pen_pal = get_field('center_ads_1x1_pen_pal');
 ?>
 
     <div class="container-fluid">
@@ -51,11 +55,24 @@
                 </div>
                 <div class="row ads-block">
                     <?php
-                    if($center_ads_2x1){
-                        for ($i = 0; $i < sizeof($center_ads_2x1); $i++){
+                    if($center_ads_2x1_saint){
+                        for ($i = 0; $i < sizeof($center_ads_2x1_saint); $i++){
                             ?>
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-ads">
-                                <img class="image-full" src="<?php echo $center_ads_2x1[$i]['image']; ?>" alt="ads_center_2_<?php echo $i ?>"/>
+                            <div class="col col-ads">
+                                <img class="image-full" src="<?php echo $center_ads_2x1_saint[$i]['image']; ?>" alt="ads_center_2_<?php echo $i ?>_saint"/>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
+                </div>
+                <div class="row ads-block">
+                    <?php
+                    if($center_ads_1x1_saint){
+                        for ($i = 0; $i < sizeof($center_ads_1x1_saint); $i++){
+                            ?>
+                            <div class="col col-ads">
+                                <img class="image-full" src="<?php echo $center_ads_1x1_saint[$i]['image']; ?>" alt="ads_center_1_<?php echo $i ?>_saint"/>
                             </div>
                             <?php
                         }
@@ -173,6 +190,32 @@
                         </div>
                     </div>
                 </div>
+                <div class="row ads-block">
+                    <?php
+                    if($center_ads_2x1_story_picture){
+                        for ($i = 0; $i < sizeof($center_ads_2x1_story_picture); $i++){
+                            ?>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-ads">
+                                <img class="image-full" src="<?php echo $center_ads_2x1_story_picture[$i]['image']; ?>" alt="ads_center_2_<?php echo $i ?>_story_picture"/>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
+                </div>
+                <div class="row ads-block">
+                    <?php
+                    if($center_ads_1x1_story_picture){
+                        for ($i = 0; $i < sizeof($center_ads_1x1_story_picture); $i++){
+                            ?>
+                            <div class="col col-ads">
+                                <img class="image-full" src="<?php echo $center_ads_1x1_story_picture[$i]['image']; ?>" alt="ads_center_1_<?php echo $i ?>_story_picture"/>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
+                </div>
                 <div class="card">
                     <div class="card-header">
                         PENGETAHUAN AGAMA KATOLIK
@@ -289,6 +332,19 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="row ads-block">
+                    <?php
+                    if($center_ads_1x1_pen_pal){
+                        for ($i = 0; $i < sizeof($center_ads_1x1_pen_pal); $i++){
+                            ?>
+                            <div class="col col-ads">
+                                <img class="image-full" src="<?php echo $center_ads_1x1_pen_pal[$i]['image']; ?>" alt="ads_center_1_<?php echo $i ?>_pen_pal"/>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
                 </div>
             </div>
             <?php include 'right-column.php'; ?>
