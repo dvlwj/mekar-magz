@@ -22,7 +22,7 @@ $left_ads_1x1_under_poem = get_field('left_ads_1x1_under_poem');
             <a href="<?php echo get_site_url().'/sahabat-mekar' ?>" class="list-group-item list-group-item-action">Sahabat Mekar</a>
         </div>
     </div>
-    <div class="card editor-desk">
+    <div class="card editor-desk d-none d-lg-block">
         <div class="card-header">
             DARI MEJA REDAKSI
         </div>
@@ -58,7 +58,7 @@ $left_ads_1x1_under_poem = get_field('left_ads_1x1_under_poem');
             ?>
         </div>
     </div>
-    <div class="card">
+    <div class="card d-none d-lg-block">
         <div class="card-header">
             PESAN KITAB SUCI
         </div>
@@ -95,7 +95,7 @@ $left_ads_1x1_under_poem = get_field('left_ads_1x1_under_poem');
             ?>
         </div>
     </div>
-    <div class="row ads-block">
+    <div class="row ads-block d-none d-lg-block">
         <?php
         if($left_ads_1x1_under_bible){
             for ($i = 0; $i < sizeof($left_ads_1x1_under_bible); $i++){
@@ -108,7 +108,7 @@ $left_ads_1x1_under_poem = get_field('left_ads_1x1_under_poem');
         }
         ?>
     </div>
-    <div class="card">
+    <div class="card d-none d-lg-block">
         <div class="card-header">
             PUISI
         </div>
@@ -145,7 +145,7 @@ $left_ads_1x1_under_poem = get_field('left_ads_1x1_under_poem');
             ?>
         </div>
     </div>
-    <div class="row ads-block">
+    <div class="row ads-block d-none d-lg-block">
         <?php
         if($left_ads_1x1_under_poem){
             for ($i = 0; $i < sizeof($left_ads_1x1_under_poem); $i++){
