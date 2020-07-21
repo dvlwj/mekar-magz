@@ -2,16 +2,16 @@
 
 <?php get_header(); ?>
 <?php
-    $center_ads_2x1_saint = get_field('center_ads_2x1_saint');
-    $center_ads_1x1_saint = get_field('center_ads_1x1_saint');
-    $center_ads_2x1_story_picture = get_field('center_ads_2x1_story_picture');
-    $center_ads_1x1_story_picture = get_field('center_ads_1x1_story_picture');
-    $center_ads_1x1_pen_pal = get_field('center_ads_1x1_pen_pal');
+    $center_ads_2x1_saint = get_field('center_ads_2x1_saint',21);
+    $center_ads_1x1_saint = get_field('center_ads_1x1_saint',21);
+    $center_ads_2x1_story_picture = get_field('center_ads_2x1_story_picture',21);
+    $center_ads_1x1_story_picture = get_field('center_ads_1x1_story_picture',21);
+    $center_ads_1x1_pen_pal = get_field('center_ads_1x1_pen_pal',21);
 ?>
 
     <div class="container-fluid">
         <div class="row main-row">
-            <?php include 'left-column.php'; ?>
+            <?php include 'left-column-homepage.php'; ?>
             <div class="col-xs-12 col-sm-6 center-column">
                 <div class="card">
                     <div class="card-header">
@@ -347,7 +347,7 @@
                     ?>
                 </div>
             </div>
-            <?php include 'right-column.php'; ?>
+            <?php include 'right-column-homepage.php'; ?>
         </div>
     </div>
 
