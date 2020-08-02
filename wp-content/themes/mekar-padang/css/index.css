@@ -84,6 +84,7 @@ html {
   margin: 0 !important;
   padding: 0 !important;
   font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* Navigation Style */
@@ -186,6 +187,17 @@ footer img {
   background-color: var(--color-crimson);
 }
 
+.et_terra .text-center,
+.radio_boos .text-center {
+  width:100%;
+}
+
+.seo-section img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .single-cerita_bergambar .post-content img {
   display: block;
   width: 100%;
@@ -224,4 +236,158 @@ footer img {
   .fixed-nav .header-logo .navbar-brand img {
     max-width: 100%;
   }
+}
+
+.page-template-page-redesign {
+  background-color: #f8f7f0 !important;
+  padding-top: 8rem;
+}
+.page-template-page-redesign .navbar {
+  /*position: fixed;*/
+  width: 100%;
+  z-index: 99999;
+  top: 0;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
+}
+.page-template-page-redesign .navbar-brand img {
+  height: 100%;
+  max-height: 5rem;
+  position: relative;
+  margin-bottom: -2rem;
+}
+.page-template-page-redesign .navbar .navbar-nav {
+  /*width: 100%;*/
+  /*max-width: 80%;*/
+  font-size: 0.75rem;
+}
+.page-template-page-redesign .navbar .navbar-nav .dropdown-menu {
+  border-radius: 0.75rem;
+}
+.page-template-page-redesign .navbar .nav-item {
+  padding: 0 0.5rem;
+}
+.page-template-page-redesign .navbar .nav-item,
+.page-template-page-redesign .navbar .nav-link,
+.page-template-page-redesign .navbar .dropdown-item {
+  text-transform: uppercase;
+  color: #6e8cc8;
+}
+.page-template-page-redesign .navbar .nav-item>a {
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #6e8cc8;
+}
+.page-template-page-redesign .navbar .dropdown-item {
+  padding: 1rem;
+}
+.page-template-page-redesign .navbar a:hover,
+.page-template-page-redesign .navbar a:focus {
+  font-weight: bold;
+  color: #6e8cc8 !important;
+}
+.page-template-page-redesign .article-details {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #6e8cc8 !important;
+}
+.page-template-page-redesign .article-details:hover {
+  font-weight: bolder;
+  text-decoration-color: #6e8cc8;
+}
+.page-template-page-redesign .segment-title{
+  color: #e62229;
+  font-weight: bold;
+}
+
+.page-template-page-redesign .editor-message-row,
+.page-template-page-redesign .bible-message-row {
+  margin-bottom: 4rem;
+}
+.page-template-page-redesign .editor-message-row .card.thumbnail-card,
+.page-template-page-redesign .bible-message-row .card.thumbnail-card {
+  min-height: 20rem;
+}
+.page-template-page-redesign .card.thumbnail-card {
+  border-radius: 1rem;
+}
+.page-template-page-redesign .card.thumbnail-card .card-body{
+  border-radius: 1rem;
+}
+.page-template-page-redesign .card.wide-thumbnail-card .card-body {
+  height: 20rem;
+  padding: 0;
+}
+.page-template-page-redesign .card.thumbnail-card .card-body.thumbnail-area,
+.page-template-page-redesign .card.thumbnail-card .card-body .thumbnail-area {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.page-template-page-redesign .wide-thumbnail-card {
+  margin-bottom: 2rem;
+}
+.page-template-page-redesign .wide-thumbnail-card .thumbnail-area {
+  border-radius: 1rem 0 0 1rem;
+}
+.page-template-page-redesign .shadow-on-hover:hover,
+.page-template-page-redesign .card.thumbnail-card:hover {
+  -webkit-box-shadow: 0 5px 20px 0 rgba(0,0,0,.2);
+  box-shadow: 0 5px 20px 0 rgba(0,0,0,.2);
+}
+.page-template-page-redesign .small-thumbnail-card {
+  margin-bottom: 2rem;
+}
+
+.page-template-page-redesign .small-thumbnail-card .card-header {
+  max-height: 100%;
+  height: 10rem !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1rem 1rem 0 0;
+}
+.page-template-page-redesign .poem-row .small-thumbnail-card .card-header,
+.page-template-page-redesign .pray-message-row .small-thumbnail-card .card-header,
+.page-template-page-redesign .serial-story-row .small-thumbnail-card .card-header,
+.page-template-page-redesign .pen-pal-row .small-thumbnail-card .card-header,
+.page-template-page-redesign .information-row .small-thumbnail-card .card-header,
+.page-template-page-redesign .religion-knowledge-row .small-thumbnail-card .card-header {
+  height: 30rem !important;
+}
+.page-template-page-redesign .editor-row .small-thumbnail-card .card-header,
+.page-template-page-redesign .pray-message-row .small-thumbnail-card .card-header,
+.page-template-page-redesign .poem-row .small-thumbnail-card .card-header {
+  border-bottom: none !important;
+}
+.page-template-page-redesign .poem-row .small-thumbnail-card .card-header,
+.page-template-page-redesign .editor-row .small-thumbnail-card .card-header,
+.page-template-page-redesign .pray-message-row .small-thumbnail-card .card-header {
+  height: 100% !important;
+  width: 100%;
+}
+.page-template-page-redesign .small-thumbnail-card .card-body {
+  padding: 1rem !important;
+}
+
+.page-template-page-redesign #scrollToTop {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 1.5rem; /* Place the button at the bottom of the page */
+  right: 2rem; /* Place the button 30px from the right */
+  z-index: 99999; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #6e8cc8; /* Set a background color */
+  color: #fff; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 1rem; /* Some padding */
+  border-radius: 1rem; /* Rounded corners */
+  font-size: 1rem; /* Increase font size */
+  width: 3rem;
+}
+
+.page-template-page-redesign  #scrollToTop:hover {
+  -webkit-box-shadow: 0 5px 20px 0 rgba(0,0,0,.2);
+  box-shadow: 0 5px 20px 0 rgba(0,0,0,.2);
 }

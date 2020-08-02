@@ -45,18 +45,25 @@
     <?php if($right_ads_1x1){ ?>
         <img class="image-full ads-block " src="<?php echo $right_ads_1x1[0]['image']; ?>" alt="ads_right_1"/>
     <?php } ?>
-    <div class="card right-column-cerpen d-none d-lg-block">
+    <div class="card right-column-cerpen">
         <div class="card-header">
             KARYA PELAYANAN KOMSOS PADANG
         </div>
         <div class="card-body">
             <img class="image-full gema" src="<?php echo $gema; ?>" alt="gema-logo-ads"/>
-            <img class="image-full gema" src="<?php echo $radio_boos; ?>" alt="radio-boos-logo-ads"/>
+            <div class="row radio_boos">
+                <div class="col-xs-12">
+                    <img class="image-full" src="<?php echo $radio_boos['image']; ?>" alt="radio-boos-logo-ads"/>
+                </div>
+                <div class="col-xs-12 text-center">
+                    <a href="<?php echo $radio_boos['url']?>" target="_blank" rel="noref noopener"><?php echo $radio_boos['title']; ?></a>
+                </div>
+            </div>
             <div class="row et_terra">
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="col-xs-12">
                     <img class="image-full" src="<?php echo $et_terra['image']; ?>" alt="et-terra-logo-ads"/>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                <div class="col-xs-12 text-center">
                     <a href="<?php echo $et_terra['url']?>" target="_blank" rel="noref noopener"><?php echo $et_terra['title']; ?></a>
                 </div>
             </div>

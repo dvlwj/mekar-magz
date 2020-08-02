@@ -7,6 +7,7 @@
     $center_ads_2x1_story_picture = get_field('center_ads_2x1_story_picture',21);
     $center_ads_1x1_story_picture = get_field('center_ads_1x1_story_picture',21);
     $center_ads_1x1_pen_pal = get_field('center_ads_1x1_pen_pal',21);
+    $postID = get_the_ID();
 ?>
 
     <div class="container-fluid">
@@ -350,5 +351,13 @@
             <?php include 'right-column-homepage.php'; ?>
         </div>
     </div>
-
+    <div class="seo-section container">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <?php the_content(); ?>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php get_footer(); ?>

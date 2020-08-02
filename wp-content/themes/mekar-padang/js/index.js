@@ -1,12 +1,18 @@
-// window.onscroll = function() {scrollFunction()};
+scrollToTop = document.getElementById("scrollToTop");
 
-// function scrollFunction() {
-//   if (document.body.scrollTop > 550 || document.documentElement.scrollTop > 550) {
-//     document.getElementsByClassName("fixed-nav")[0].style.position = 'fixed';
-//     // document.getElementsByClassName("fixed-nav")[0].classList.add("hidden");
-//   } else {
-//     document.getElementsByClassName("fixed-nav")[0].style.position = 'relative';
-//     // document.getElementsByClassName("scrolling-nav")[0].classList.add("hidden");
-//     // document.getElementsByClassName("fixed-nav")[0].classList.remove("hidden");
-//   }
-// }
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTop.style.display = "block";
+    } else {
+        scrollToTop.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
