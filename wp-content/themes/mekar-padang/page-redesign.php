@@ -11,6 +11,9 @@
 ?>
     <div class="container">
         <div class="col-xs-12">
+            <?php include 'pages/last-posts.php' ?>
+        </div>
+        <div class="col-xs-12">
             <?php include 'pages/editor-message.php' ?>
         </div>
         <div class="col-xs-12">

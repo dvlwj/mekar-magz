@@ -1,10 +1,6 @@
 <?php
-
-$right_ads_1x1 = get_field('right_ads_1x1', 21);
-$right_ads_1x1_2nd = get_field('right_ads_1x1_2nd', 21);
-$gema = get_field('gema', 21);
-$et_terra = get_field('et_terra', 21);
-$radio_boos = get_field('radio_boos', 21);
+$editor_message = get_editor_message(1);
+$editor_message->the_post();
 ?>
 <div class="row editor-message-row">
     <div class="col-xs-12 col-sm-12 col-md-6 align-self-center">

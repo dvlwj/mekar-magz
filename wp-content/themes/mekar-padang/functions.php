@@ -308,4 +308,21 @@ function get_poem($post_amount,$offset = NULL){
     return $new_query;
 }
 
+function get_last_posts($post_amount,$offset = NULL){
+    if(is_null($offset)) $offset = 0;
+    $categoryID = isset($_GET['cat']) ? $_GET['cat'] : '0';
+    $post_types = get_post_types(['public' => true]);
+    $args = array(
+        'post_type' => $post_types,
+        'post_status' => 'publish',
+        'cat' => $categoryID,
+        'order_by' => 'publish_date',
+        'posts_per_page' => $post_amount,
+        'offset' => $offset,
+        'order' => 'desc',
+    );
+    $new_query = new WP_Query ($args);
+    return $new_query;
+}
+
 ?>
