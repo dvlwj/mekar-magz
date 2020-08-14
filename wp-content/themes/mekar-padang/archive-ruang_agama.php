@@ -19,9 +19,11 @@
                 $args = array(
                     'post_type' => 'ruang_agama',
                     'post_status' => 'publish',
+                    'paged' => get_query_var( 'paged' ),
                     'cat' => $categoryID,
                     'order_by' => 'publish_date',
                     'order' => 'desc',
+                    'posts_per_page' => 10
                 );
 
                 ?>
