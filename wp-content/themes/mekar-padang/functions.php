@@ -128,8 +128,201 @@ function get_excerpt($character_count){
     $excerpt = substr($excerpt, 0, $character_count);
     $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
     $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
-    $excerpt = $excerpt.'... <a href="'.get_the_permalink().'">Lebih Lengkap</a>';
+    if (strlen($excerpt) > 0) {
+        $excerpt = $excerpt.'... <a href="'.get_the_permalink().'" class="article-details">Selengkapnya <i class="fa fas fa-chevron-right"></i><i class="fa fas fa-chevron-right"></i><i class="fa fas fa-chevron-right"></i></a>';
+    } else {
+        $excerpt = '<a href="'.get_the_permalink().'" class="text-center ml-auto mr-auto d-block article-details">Selengkapnya <i class="fa fas fa-chevron-right"></i><i class="fa fas fa-chevron-right"></i><i class="fa fas fa-chevron-right"></i></a>';
+    }
     return $excerpt;
+}
+
+function get_editor_message($post_amount,$offset = NULL){
+    if(is_null($offset)) $offset = 0;
+    $categoryID = isset($_GET['cat']) ? $_GET['cat'] : '0';
+    $args = array(
+        'post_type' => 'meja_redaksi',
+        'post_status' => 'publish',
+        'cat' => $categoryID,
+        'order_by' => 'publish_date',
+        'posts_per_page' => $post_amount,
+        'offset' => $offset,
+        'order' => 'desc',
+    );
+    $new_query = new WP_Query ($args);
+    return $new_query;
+}
+
+function get_saint_profile($post_amount,$offset = NULL){
+    if(is_null($offset)) $offset = 0;
+    $categoryID = isset($_GET['cat']) ? $_GET['cat'] : '0';
+    $args = array(
+        'post_type' => 'orang_kudus',
+        'post_status' => 'publish',
+        'cat' => $categoryID,
+        'order_by' => 'publish_date',
+        'posts_per_page' => $post_amount,
+        'offset' => $offset,
+        'order' => 'desc',
+    );
+    $new_query = new WP_Query ($args);
+    return $new_query;
+}
+
+function get_short_story($post_amount,$offset = NULL){
+    if(is_null($offset)) $offset = 0;
+    $categoryID = isset($_GET['cat']) ? $_GET['cat'] : '0';
+    $args = array(
+        'post_type' => 'cerita_pendek',
+        'post_status' => 'publish',
+        'cat' => $categoryID,
+        'order_by' => 'publish_date',
+        'posts_per_page' => $post_amount,
+        'offset' => $offset,
+        'order' => 'desc',
+    );
+    $new_query = new WP_Query ($args);
+    return $new_query;
+}
+
+function get_serial_story($post_amount,$offset = NULL){
+    if(is_null($offset)) $offset = 0;
+    $categoryID = isset($_GET['cat']) ? $_GET['cat'] : '0';
+    $args = array(
+        'post_type' => 'cerita_bersambung',
+        'post_status' => 'publish',
+        'cat' => $categoryID,
+        'order_by' => 'publish_date',
+        'posts_per_page' => $post_amount,
+        'offset' => $offset,
+        'order' => 'desc',
+    );
+    $new_query = new WP_Query ($args);
+    return $new_query;
+}
+function get_comic($post_amount,$offset = NULL){
+    if(is_null($offset)) $offset = 0;
+    $categoryID = isset($_GET['cat']) ? $_GET['cat'] : '0';
+    $args = array(
+        'post_type' => 'cerita_bergambar',
+        'post_status' => 'publish',
+        'cat' => $categoryID,
+        'order_by' => 'publish_date',
+        'posts_per_page' => $post_amount,
+        'offset' => $offset,
+        'order' => 'desc',
+    );
+    $new_query = new WP_Query ($args);
+    return $new_query;
+}
+function get_religion_knowledge($post_amount,$offset = NULL){
+    if(is_null($offset)) $offset = 0;
+    $categoryID = isset($_GET['cat']) ? $_GET['cat'] : '0';
+    $args = array(
+        'post_type' => 'pengetahuan_agama',
+        'post_status' => 'publish',
+        'cat' => $categoryID,
+        'order_by' => 'publish_date',
+        'posts_per_page' => $post_amount,
+        'offset' => $offset,
+        'order' => 'desc',
+    );
+    $new_query = new WP_Query ($args);
+    return $new_query;
+}
+function get_information_notice($post_amount,$offset = NULL){
+    if(is_null($offset)) $offset = 0;
+    $categoryID = isset($_GET['cat']) ? $_GET['cat'] : '0';
+    $args = array(
+        'post_type' => 'sekilas_info',
+        'post_status' => 'publish',
+        'cat' => $categoryID,
+        'order_by' => 'publish_date',
+        'posts_per_page' => $post_amount,
+        'offset' => $offset,
+        'order' => 'desc',
+    );
+    $new_query = new WP_Query ($args);
+    return $new_query;
+}
+function get_pen_pal($post_amount,$offset = NULL){
+    if(is_null($offset)) $offset = 0;
+    $categoryID = isset($_GET['cat']) ? $_GET['cat'] : '0';
+    $args = array(
+        'post_type' => 'sahabat_mekar',
+        'post_status' => 'publish',
+        'cat' => $categoryID,
+        'order_by' => 'publish_date',
+        'posts_per_page' => $post_amount,
+        'offset' => $offset,
+        'order' => 'desc',
+    );
+    $new_query = new WP_Query ($args);
+    return $new_query;
+}
+
+function get_bible_message($post_amount,$offset = NULL){
+    if(is_null($offset)) $offset = 0;
+    $categoryID = isset($_GET['cat']) ? $_GET['cat'] : '0';
+    $args = array(
+        'post_type' => 'pesan_kitab_suci',
+        'post_status' => 'publish',
+        'cat' => $categoryID,
+        'order_by' => 'publish_date',
+        'posts_per_page' => $post_amount,
+        'offset' => $offset,
+        'order' => 'desc',
+    );
+    $new_query = new WP_Query ($args);
+    return $new_query;
+}
+
+function get_pray_message($post_amount,$offset = NULL){
+    if(is_null($offset)) $offset = 0;
+    $categoryID = isset($_GET['cat']) ? $_GET['cat'] : '0';
+    $args = array(
+        'post_type' => 'ujud_doa',
+        'post_status' => 'publish',
+        'cat' => $categoryID,
+        'order_by' => 'publish_date',
+        'posts_per_page' => $post_amount,
+        'offset' => $offset,
+        'order' => 'desc',
+    );
+    $new_query = new WP_Query ($args);
+    return $new_query;
+}
+
+function get_poem($post_amount,$offset = NULL){
+    if(is_null($offset)) $offset = 0;
+    $categoryID = isset($_GET['cat']) ? $_GET['cat'] : '0';
+    $args = array(
+        'post_type' => 'puisi',
+        'post_status' => 'publish',
+        'cat' => $categoryID,
+        'order_by' => 'publish_date',
+        'posts_per_page' => $post_amount,
+        'offset' => $offset,
+        'order' => 'desc',
+    );
+    $new_query = new WP_Query ($args);
+    return $new_query;
+}
+
+function get_last_posts($post_amount,$offset = NULL){
+    if(is_null($offset)) $offset = 0;
+    $categoryID = isset($_GET['cat']) ? $_GET['cat'] : '0';
+    $post_types = get_post_types(['public' => true]);
+    $args = array(
+        'post_type' => $post_types,
+        'post_status' => 'publish',
+        'cat' => $categoryID,
+        'order_by' => 'publish_date',
+        'posts_per_page' => $post_amount,
+        'offset' => $offset,
+        'order' => 'desc',
+    );
+    $new_query = new WP_Query ($args);
+    return $new_query;
 }
 
 ?>

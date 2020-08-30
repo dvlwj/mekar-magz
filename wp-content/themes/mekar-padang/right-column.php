@@ -1,10 +1,11 @@
 <?php /* Template Name: Page - Right Column */ ?>
 
 <?php
-    $right_ads_1x1 = get_field('right_ads_1x1');
-    $right_ads_1x1_2nd = get_field('right_ads_1x1_2nd');
-    $gema = get_field('gema');
-    $et_terra = get_field('et_terra');
+    $right_ads_1x1 = get_field('right_ads_1x1',21);
+    $right_ads_1x1_2nd = get_field('right_ads_1x1_2nd',21);
+    $gema = get_field('gema',21);
+    $et_terra = get_field('et_terra',21);
+    $radio_boos = get_field('radio_boos',21);
 ?>
 
 <div class="col-xs-12 col-sm-3 right-column">
@@ -36,46 +37,39 @@
     }
     wp_reset_postdata();
     ?>
-    <div class="card">
+    <div class="card d-none d-lg-block">
         <div class="card-header">
             <?php echo do_shortcode('[apvc_embed type="customized" border_size="2" border_radius="5" background_color="" font_size="14" font_style="" font_color="" counter_label="Visits:" today_cnt_label="Today:" global_cnt_label="Jumlah Pengunjung:" border_color="" border_style="none" padding="5" width="200" global="true" today="false" current="false" icon_position="" widget_template="None" ]');?>
         </div>
     </div>
     <?php if($right_ads_1x1){ ?>
-        <img class="image-full ads-block" src="<?php echo $right_ads_1x1[0]['image']; ?>" alt="ads_right_1"/>
+        <img class="image-full ads-block d-none d-lg-block" src="<?php echo $right_ads_1x1[0]['image']; ?>" alt="ads_right_1"/>
     <?php } ?>
-    <div class="card right-column-cerpen">
+    <div class="card right-column-cerpen d-none d-lg-block">
         <div class="card-header">
             KARYA PELAYANAN KOMSOS PADANG
         </div>
         <div class="card-body">
             <img class="image-full gema" src="<?php echo $gema; ?>" alt="gema-logo-ads"/>
-            <div class="card">
-                <div class="card-header">
-                    <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
-                    <script type="text/javascript">
-                        MRP.insert({
-                            'url':'http://live.boosfm.com:8154/;',
-                            'codec':'mp3',
-                            'volume':100,
-                            'autoplay':true,
-                            'buffering':5,
-                            'title':'BOOS 104.2 FM',
-                            'welcome':'Selamat Mendengarkan',
-                            'bgcolor':'#FFFFFF',
-                            'skin':'faredirfare',
-                            'width':320,
-                            'height':62
-                        });
-                    </script>
+            <div class="row radio_boos">
+                <div class="col-xs-12">
+                    <img class="image-full" src="<?php echo $radio_boos['image']; ?>" alt="radio-boos-logo-ads"/>
+                </div>
+                <div class="col-xs-12 text-center">
+                    <a href="<?php echo $radio_boos['url']?>" target="_blank" rel="noref noopener"><?php echo $radio_boos['title']; ?></a>
                 </div>
             </div>
-            <span class="et_terra">
-                <?php echo $et_terra; ?>
-            </span>
+            <div class="row et_terra">
+                <div class="col-xs-12">
+                    <img class="image-full" src="<?php echo $et_terra['image']; ?>" alt="et-terra-logo-ads"/>
+                </div>
+                <div class="col-xs-12 text-center">
+                    <a href="<?php echo $et_terra['url']?>" target="_blank" rel="noref noopener"><?php echo $et_terra['title']; ?></a>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="card right-column-cerpen">
+    <div class="card right-column-cerpen d-none d-lg-block">
         <div class="card-header">
             CERPEN SEBELUMNYA
         </div>
@@ -116,9 +110,9 @@
         </div>
     </div>
     <?php if($right_ads_1x1_2nd){ ?>
-        <img class="image-full ads-block" src="<?php echo $right_ads_1x1[0]['image']; ?>" alt="ads_right_1"/>
+        <img class="image-full ads-block d-none d-lg-block" src="<?php echo $right_ads_1x1[0]['image']; ?>" alt="ads_right_1"/>
     <?php } ?>
-    <div class="card right-column-cergam">
+    <div class="card right-column-cergam d-none d-lg-block">
         <div class="card-header">
             CERGAM SEBELUMNYA
         </div>
