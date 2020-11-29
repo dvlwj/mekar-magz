@@ -67,7 +67,7 @@
   margin-right: auto;
 }
 
-.ads-block,
+.custom-catalogue-block,
 .col-ads {
   margin-bottom: 1rem;
 }
@@ -79,7 +79,12 @@
   width: 100% !important;
   height: 15rem;
 }
-
+.no-padding {
+  padding: 0 !important;
+}
+.width-100 {
+  width: 100% !important;
+}
 html {
   margin: 0 !important;
   padding: 0 !important;

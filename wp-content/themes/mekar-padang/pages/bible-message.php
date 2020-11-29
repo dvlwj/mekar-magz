@@ -2,6 +2,11 @@
 $editor_message = get_bible_message(1);
 $editor_message->the_post();
 ?>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <h2 class="segment-title">PESAN KITAB SUCI</h2>
+    </div>
+</div>
 <div class="row bible-message-row">
     <div class="col-xs-12 col-sm-12 col-md-6">
         <div class="card thumbnail-card">
