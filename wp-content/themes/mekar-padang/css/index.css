@@ -129,7 +129,7 @@ html {
 
 footer {
   margin-top: 2rem;
-  background-color: var(--color-gray);
+  /*background-color: var(--color-gray);*/
   padding: 2em;
 }
 
@@ -232,20 +232,6 @@ footer img {
 /*  max-width: 100%;*/
 /*}*/
 
-@media (max-width:510px) {
-  .left-column,
-  .center-column,
-  .right-column {
-    margin-top: 2rem;
-  }
-  .fixed-nav .header-logo .navbar-brand {
-    margin: 0;
-  }
-  .fixed-nav .header-logo .navbar-brand img {
-    max-width: 100%;
-  }
-}
-
 .page-template-page-redesign {
   background-color: #f8f7f0 !important;
   padding-top: 8rem;
@@ -285,6 +271,7 @@ footer img {
 .page-template-page-redesign .navbar .nav-item>a {
   padding-bottom: 0.3rem;
   border-bottom: 2px solid #6e8cc8;
+  font-size: 1em;
 }
 .page-template-page-redesign .navbar .dropdown-item {
   padding: 1rem;
@@ -323,7 +310,8 @@ footer img {
   border-radius: 1rem;
 }
 .page-template-page-redesign .card.wide-thumbnail-card .card-body {
-  height: 20rem;
+  min-height: 20rem;
+  max-height: fit-content;
   padding: 0;
 }
 .page-template-page-redesign .card.thumbnail-card .card-body.thumbnail-area,
@@ -406,4 +394,49 @@ footer img {
 }
 .m-0-forced {
   margin: 0 !important;
+}
+
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width:575px) {
+  .left-column,
+  .center-column,
+  .right-column {
+    margin-top: 2rem;
+  }
+  .fixed-nav .header-logo .navbar-brand {
+    margin: 0;
+  }
+  .fixed-nav .header-logo .navbar-brand img {
+    max-width: 100%;
+  }
+  .page-template-page-redesign .card.wide-thumbnail-card .card-body {
+    height: fit-content !important;
+    padding: 0;
+  }
+}
+/*Small devices (landscape phones, less than 768px)*/
+@media (max-width:767px){}
+/*Medium devices (tablets, less than 992px)*/
+@media (min-width: 768px) and (max-width: 991px) {}
+/*Large devices (desktops, less than 1200px)*/
+@media (min-width: 992px) and (max-width: 1113px) {
+  .page-template-page-redesign .navbar .nav-item>a {
+    height: 100%;
+  }
+}
+@media (min-width: 1114px) and (max-width: 1156px) {
+  .page-template-page-redesign .navbar .nav-item>a {
+    font-size: 0.55em;
+  }
+}
+@media (min-width: 1157px) and (max-width: 1199px) {
+  .page-template-page-redesign .navbar .nav-item>a {
+    font-size: 0.75em;
+  }
+}
+@media (min-width:1200px) and (max-width: 1320px) {
+  .page-template-page-redesign .navbar .nav-item>a {
+    font-size: 0.80em;
+  }
 }

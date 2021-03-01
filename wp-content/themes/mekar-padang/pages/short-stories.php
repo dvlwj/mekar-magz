@@ -28,11 +28,12 @@
             while($short_story->have_posts()){
                 $i= $i+1;
                 $padding = '';
-                if($i==1) $padding = 'pl-0';
-                if($i==3) $padding = 'pr-0';
+                if($i==1) $padding = 'pl-0 pr-0 pr-md-2';
+                if($i==2) $padding = 'pl-0 pr-0';
+                if($i==3) $padding = 'pl-0 pr-0 pl-md-2';
                 $short_story->the_post();
                 ?>
-                <div class="col-xs-12 col-sm-12 col-md-4 <?php echo $padding ?>">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 <?php echo $padding ?>">
                     <div class="card thumbnail-card small-thumbnail-card">
                         <div class="card-header" style="background-image: url('<?php echo the_post_thumbnail_url();?>')"></div>
                         <div class="card-body">

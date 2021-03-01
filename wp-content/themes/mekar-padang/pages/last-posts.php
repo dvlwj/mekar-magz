@@ -6,8 +6,10 @@
     while($comic->have_posts()){
         $i= $i+1;
         $padding = '';
-        if($i==1) $padding = 'pl-0';
-        if($i==3) $padding = 'pr-0';
+        if($i==1) $padding = 'pl-md-0';
+        if($i==3) $padding = 'pr-md-0';
+        if($i==4) $padding = 'pl-md-0';
+        if($i==6) $padding = 'pr-md-0';
         $comic->the_post();
         ?>
         <div class="col-xs-12 col-sm-12 col-md-4 <?php echo $padding ?>">

@@ -1,20 +1,16 @@
 <footer>
-  <div class="row">
-    <div class="col-sm-12 d-flex align-items-center justify-content-center text-center">
-      <div class="col-xs-12 col-sm-2 align-self-center">
-        <img class="image-full" src="<?php echo theme_image('komsos.png')?>" loading="lazy"/>
-      </div>
-      <div class="col-xs-12 col-sm-10">
-          <ul class="list-group list-group-horizontal justify-content-center">
-              <li class="list-group-item">Gema</li>
-              <li class="list-group-item">Mekar</li>
-              <li class="list-group-item">Boos FM</li>
-              <li class="list-group-item">Radio DB</li>
-              <li class="list-group-item">Et Terra</li>
-          </ul>
-      </div>
+    <div class="row">
+        <img class="image-full ml-auto mr-auto" src="<?php echo theme_image('komsos.png')?>" loading="lazy"/>
     </div>
-  </div>
+    <div class="row w-100 mt-2">
+        <ul class="w-100 text-center list-inline">
+          <li class="list-inline-item">Gema</li>
+          <li class="list-inline-item">Mekar</li>
+          <li class="list-inline-item">Boos FM</li>
+          <li class="list-inline-item">Radio DB</li>
+          <li class="list-inline-item">Et Terra</li>
+        </ul>
+    </div>
 </footer>
 <?php wp_footer(); ?>
 </body>

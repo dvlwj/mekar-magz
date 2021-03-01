@@ -117,10 +117,10 @@
         <div class="col-xs-12">
             <?php include 'pages/religion-knowledge.php' ?>
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-6 pl-0">
+                <div class="col-xs-12 col-sm-12 col-md-6 pl-0 pr-0 pr-sm-2">
                     <?php include 'pages/short-info.php' ?>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-6 pr-0">
+                <div class="col-xs-12 col-sm-12 col-md-6 pl-0 pr-0 pl-sm-2">
                     <?php include 'pages/pen-pal.php' ?>
                 </div>
             </div>
