@@ -247,9 +247,9 @@ footer img {
 }
 .page-template-page-redesign .navbar-brand img {
   height: 100%;
-  max-height: 5rem;
+  max-height: 8rem;
   position: relative;
-  margin-bottom: -2rem;
+  margin-bottom: -2.3rem;
 }
 .page-template-page-redesign .navbar .navbar-nav {
   /*width: 100%;*/
@@ -313,6 +313,9 @@ footer img {
   min-height: 20rem;
   max-height: fit-content;
   padding: 0;
+}
+.page-template-page-redesign .saint-row .card.wide-thumbnail-card .card-body {
+  min-height: unset;
 }
 .page-template-page-redesign .card.thumbnail-card .card-body.thumbnail-area,
 .page-template-page-redesign .card.thumbnail-card .card-body .thumbnail-area {

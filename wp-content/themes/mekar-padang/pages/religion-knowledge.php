@@ -1,4 +1,4 @@
-<h2 class="segment-title">PENGETAHUAN AGAMA KATOLIK</h2>
+<h2 class="segment-title">VARIA</h2>
 <div class="row religion-knowledge-row">
     <?php
     $religion_knowledge = get_religion_knowledge(1);

@@ -28,7 +28,7 @@
                         if($i==0) $padding = 'pl-md-0 pr-md-2';
                         if($i==1) $padding = 'pr-md-0 pl-md-2';
                         ?>
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-ads pl-0 pr-0 <?php echo $padding ?>">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-ads pl-0 pr-0 <?php echo $padding ?>">
                             <img class="image-full" src="<?php echo $center_ads_2x1_bible[$i]['image']; ?>" alt="ads_center_2_<?php echo $i ?>_saint"/>
                         </div>
                         <?php
@@ -66,7 +66,7 @@
                             if($i==0) $padding = 'pl-md-0 pr-md-2';
                             if($i==1) $padding = 'pr-md-0 pl-md-2';
                     ?>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-ads pl-0 pr-0 <?php echo $padding ?>">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-ads pl-0 pr-0 <?php echo $padding ?>">
                         <img class="image-full" src="<?php echo $center_ads_2x1_saint[$i]['image']; ?>" alt="ads_center_2_<?php echo $i ?>_saint"/>
                     </div>
                     <?php
@@ -112,10 +112,10 @@
             </div>
         </div>
         <div class="col-xs-12">
-            <?php include 'pages/comics.php' ?>
+            <?php include 'pages/religion-knowledge.php' ?>
         </div>
         <div class="col-xs-12">
-            <?php include 'pages/religion-knowledge.php' ?>
+            <?php include 'pages/comics.php' ?>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-6 pl-0 pr-0 pr-sm-2">
                     <?php include 'pages/short-info.php' ?>

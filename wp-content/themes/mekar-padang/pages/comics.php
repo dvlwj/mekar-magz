@@ -18,7 +18,7 @@
         wp_reset_postdata();
         ?>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 d-flex align-content-stretch flex-wrap">
+    <div class="col-xs-6 col-sm-6 col-md-6 d-flex align-content-stretch flex-wrap">
         <?php
             $comic = get_comic(2,2);
             while($comic -> have_posts()){

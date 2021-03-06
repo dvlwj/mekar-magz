@@ -54,13 +54,13 @@
                 <a href="<?php echo get_site_url().'/orang-kudus' ?>" class="nav-link">Orang Kudus</a>
             </li>
             <li class="nav-item mr-auto">
-                <a href="<?php echo get_site_url().'/pengetahuan-agama' ?>" class="nav-link">Pengetahuan Agama Katolik</a>
+                <a href="<?php echo get_site_url().'/pengetahuan-agama' ?>" class="nav-link">Varia</a>
             </li>
             <li class="nav-item mr-auto">
                 <a href="<?php echo get_site_url().'/puisi' ?>" class="nav-link">Puisi</a>
             </li>
             <li class="nav-item mr-auto">
-                <a href="<?php echo get_site_url().'/sekilas-info' ?>" class="nav-link">Sekilas Info</a>
+                <a href="<?php echo get_site_url().'/sekilas-info' ?>" class="nav-link">Serba Serbi</a>
             </li>
             <li class="nav-item mr-auto">
                 <a href="<?php echo get_site_url().'/sahabat-mekar' ?>" class="nav-link">Sahabat Mekar</a>

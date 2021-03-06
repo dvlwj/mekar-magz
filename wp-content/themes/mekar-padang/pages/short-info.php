@@ -1,4 +1,4 @@
-<h2 class="segment-title">SEKILAS INFO</h2>
+<h2 class="segment-title">SERBA SERBI</h2>
 <div class="row information-row">
     <?php
     $information_notice = get_information_notice(1);
