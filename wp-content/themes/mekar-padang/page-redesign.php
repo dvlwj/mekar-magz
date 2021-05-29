@@ -9,7 +9,7 @@
     $right_ads_1x1_poem = get_field('right_ads_1x1_poem',21);
     $postID = get_the_ID();
 ?>
-    <div class="container">
+    <div class="container redesign-root">
         <div class="col-xs-12">
             <?php include 'pages/last-posts.php' ?>
         </div>
@@ -51,6 +51,9 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-xs-12">
+                <?php include 'pages/comics.php' ?>
+            </div>
             <div class="col-xs-12 col-md-8">
                 <div class="col-xs-12">
                     <?php include 'pages/short-stories.php' ?>
@@ -115,7 +118,6 @@
             <?php include 'pages/religion-knowledge.php' ?>
         </div>
         <div class="col-xs-12">
-            <?php include 'pages/comics.php' ?>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-6 pl-0 pr-0 pr-sm-2">
                     <?php include 'pages/short-info.php' ?>

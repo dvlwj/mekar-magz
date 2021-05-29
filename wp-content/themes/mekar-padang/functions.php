@@ -311,7 +311,7 @@ function get_poem($post_amount,$offset = NULL){
 function get_last_posts($post_amount,$offset = NULL){
     if(is_null($offset)) $offset = 0;
     $categoryID = isset($_GET['cat']) ? $_GET['cat'] : '0';
-    $post_types = get_post_types(['public' => true]);
+    $post_types = get_post_types(['public' => true,'_builtin' => false]);
     $args = array(
         'post_type' => $post_types,
         'post_status' => 'publish',
