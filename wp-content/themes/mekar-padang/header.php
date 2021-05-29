@@ -36,7 +36,7 @@
                   <img class="image-full" src="<?php echo $imageLogo[0];?>" alt="website-logo"/>
               </div>
               <div class="col-xs-12 col-sm-12 col-md-3">
-                  <div class="col d-none d-lg-block">
+                  <div class="col d-lg-block">
                       <img class="image-full" src="<?php echo theme_image('redaksi.jpg') ?>" alt="redaksi-image"/>
                   </div>
               </div>
